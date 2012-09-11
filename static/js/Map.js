@@ -261,6 +261,13 @@ function initMap(tileurl, ismobile) {
                            { opacity: baseopacity,
                              numZoomLevels: 19,
                              "permalink" : "base"});
+                             
+	/** Norwegian National Map */			
+    var topo2 = new OpenLayers.Layer.WMS(
+                "Topografisk norgeskart2","http://opencache.statkart.no/gatekeeper/gk/gk.open",
+                {layers: 'topo2', format: 'image/jpeg'},{attribution:'<a href="http://www.statkart.no">Kartverket</a>, <a href="http://www.statkart.no/nor/Land/Fagomrader/         Geovekst/">Geovekst</a> og <a href="http://www.statkart.no/?module=Articles;action=Article.publicShow;ID=14194">kommuner</a>'}
+                ); 
+
 
     var layerHiking = new OpenLayers.Layer.OSM("Routes Map",
                            tileurl + "/${z}/${x}/${y}.png",
@@ -300,7 +307,7 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
         hill2.setOpacity(hillopacity - 1.0);
 
 
-    map.addLayers([hill, hill2, layerMapnik, layerHiking]);
+    map.addLayers([hill, hill2, topo2, layerHiking]);
 
     if (window.location.href.indexOf("?") == -1) {
         var bounds = new OpenLayers.Bounds(minlon, minlat, maxlon, maxlat);
