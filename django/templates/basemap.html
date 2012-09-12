@@ -11,7 +11,7 @@
     <meta name="description" content="{% trans mapdescription %}" />
     <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
     <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
-    <title>Waymarked Trails - {% trans maptopic %}</title>
+    <title>route.is</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/map.css" />
@@ -53,12 +53,12 @@
     <div id="map" tabindex="0">{% trans "JavaScript needs to be activated to use this service." %}</div>
 
     <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>Waymarked Trails: {% trans maptopic %}</h1> {% include "snippets/langchooser.html"%}
+        <h1>route.is</h1> {% include "snippets/langchooser.html"%}
     </div>
     <div id="map_subheader" class="subheader subheadline">
         {% trans "Last update" %}: {{updatetime}}
       <div class="absright">
-      {% trans "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"|markdown|filterpara  %}, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}
+      {% trans "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"|markdown|filterpara  %}, {% trans "Kartgrunnlag: [Kartverket](http://www.statkart.no/), [Geovekst](http://www.statkart.no/nor/Land/Fagomrader/Geovekst/) og [kommuner](http://www.statkart.no/?module=Articles;action=Article.publicShow;ID=14194)"|markdown|filterpara %}
      </div>
     </div>
 
