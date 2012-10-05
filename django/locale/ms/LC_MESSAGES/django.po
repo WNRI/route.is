@@ -1,7 +1,7 @@
-# Translation of Waymarked Trails to Romanian (română)
+# Translation of Waymarked Trails to Malay (Bahasa Melayu)
 # Exported from translatewiki.net
 #
-# Author: Minisarm
+# Author: Anakmalaysia
 # --
 # This file is part of the Waymarked Trails Map Project
 # Copyright (C) 2011-2012
@@ -12,32 +12,32 @@ msgstr ""
 ""
 "Project-Id-Version: Waymarked Trails\n"
 "Report-Msgid-Bugs-To: translatewiki.net\n"
-"POT-Creation-Date: 2012-09-20 17:16+0200\n"
-"PO-Revision-Date: 2012-10-02 13:10:16+0000\n"
+"POT-Creation-Date: 2012-09-20 17:17+0200\n"
+"PO-Revision-Date: 2012-10-02 13:10:15+0000\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-POT-Import-Date: 2012-10-02 12:59:40+0000\n"
 "X-Translation-Project: translatewiki.net <https://translatewiki.net>\n"
 "X-Generator: MediaWiki 1.21alpha (a6910fb); Translate 2012-07-04\n"
-"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ( (n == 0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2 );\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/cycling/settings.py:36 templates/basemap.html:71
 msgid "Cycling"
-msgstr "Ciclism"
+msgstr "Basikal"
 
 #: src/routemap/cycling/settings.py:37
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails afișează trasee pentru ciclism, de la nivel local la nivel internațional, cu hărți și informații de la OpenStreetMap."
+msgstr "Waymarked Trails memaparkan laluan basikal dari peringkat tempatan hingga antarabangsa, dengan peta-peta dan maklumat dari OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:34 templates/basemap.html:70
 msgid "Hiking"
-msgstr "Drumeții"
+msgstr "Kembara"
 
 #: src/routemap/hiking/settings.py:35
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails afișează trasee pentru drumeții, de la nivel local la nivel internațional, cu hărți și informații de la OpenStreetMap."
+msgstr "Waymarked Trails memaparkan laluan kembara jalan kaki dari peringkat tempatan hingga antarabangsa, dengan peta-peta dan maklumat dari OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
@@ -46,34 +46,34 @@ msgstr "MTB"
 
 #: src/routemap/mtbmap/settings.py:37
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails afișează trasee pentru ciclism montan (MTB), de la nivel local la nivel internațional, cu hărți și informații de la OpenStreetMap."
+msgstr "Waymarked Trails memaparkan laluan basikal gunung (MTB) dari peringkat tempatan hingga antarabangsa, dengan peta-peta dan maklumat dari OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:35 templates/basemap.html:73
 msgid "Inline Skating"
-msgstr "Patinaj cu role"
+msgstr "Kasut Roda"
 
 #: src/routemap/skating/settings.py:36
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails afișează trasee pentru patinaj cu role, de la nivel local la nivel internațional, cu hărți și informații de la OpenStreetMap."
+msgstr "Waymarked Trails memaparkan laluan kasut roda dari peringkat tempatan hingga antarabangsa, dengan peta-peta dan maklumat dari OpenStreetMap."
 
 #: src/routemap/views/helppages.py:45
 msgid "Error"
-msgstr "Eroare"
+msgstr "Ralat"
 
 #: src/routemap/views/helppages.py:45
 msgid "The requested page does not exist."
-msgstr "Pagina solicitată nu există."
+msgstr "Halaman yang dipohon tidak wujud."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:40
 msgid "No valid map area specified. Check the bbox parameter in the URL."
-msgstr "Nici o zonă de hartă validă specificată. Verificați parametrul bbox din URL."
+msgstr "Tiada kawasan peta yang sah dinyatakan. Sila semak parameter bbox dalam URL."
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
-msgstr "Coordonate nevalide furnizate pentru zona de hartă. Verificați parametrul bbox din URL."
+msgstr "Koordinat yang tidak sah diberikan untuk kawasan peta. Semak parameter bbox dalam URL."
 
 #: src/routemap/views/routeinfo.py:102
 #, optional, python-format
@@ -89,7 +89,7 @@ msgstr "%s km"
 #. length that has been mapped so far and is actually visible on the map.
 #: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
-msgstr "Afișată pe hartă"
+msgstr "Kepanjangan terpeta"
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length given in the information about the route.
@@ -97,29 +97,29 @@ msgstr "Afișată pe hartă"
 #. http://wiki.openstreetmap.org/wiki/Key:distance
 #: src/routemap/views/routeinfo.py:135
 msgid "Official length"
-msgstr "Lungime oficială"
+msgstr "Kepanjangan rasmi"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
 #: src/routemap/views/routeinfo.py:139
 msgid "Operator"
-msgstr "Operator"
+msgstr "Pengendali"
 
 #: src/routemap/views/routeinfo.py:296
 msgid "continental"
-msgstr "continentale"
+msgstr "sebenua"
 
 #: src/routemap/views/routeinfo.py:297
 msgid "national"
-msgstr "naționale"
+msgstr "senegara"
 
 #: src/routemap/views/routeinfo.py:298
 msgid "regional"
-msgstr "regionale"
+msgstr "serantau"
 
 #: src/routemap/views/routeinfo.py:299
 msgid "other"
-msgstr "altele"
+msgstr "lain-lain"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
@@ -127,31 +127,31 @@ msgstr "altele"
 #: templates/routes/list.html:8 templates/search/noresults.html:8
 #: templates/search/places.html:8 templates/search/result.html:8
 msgid "Back to map"
-msgstr "Înapoi la hartă"
+msgstr "Kembali ke peta"
 
 #: templates/404.html:27
 msgid "Page not found"
-msgstr "Pagina nu a fost găsită"
+msgstr "Halaman tidak dijumpai"
 
 #: templates/404.html:28
 msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
-msgstr "Se pare că pagina pe care o căutați nu există. În cazul în care credeți că tocmai ați descoperit un link întrerupt, nu ezitați să ne contactați."
+msgstr "Nampaknya halaman yang anda cari itu tidak wujud. Jika anda merasakan telah menemui pautan yang kosong, jangan segan menghubungi kami."
 
 #: templates/500.html:27
 msgid "Internal Server Error"
-msgstr "Eroare internă a serverului"
+msgstr "Ralat Pelayan Dalaman"
 
 #: templates/500.html:28
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
-msgstr "Ceva foarte neașteptat tocmai s-a întâmplat pe server. Vă rugăm să întocmiți un raport al bugului; și nu uitați să descrieți în detaliu acțiunea care a condus la afișarea acestei erori."
+msgstr "Sesuatu yang amat di luar jangkaan baru berlaku di pelayan. Silalah buat laporan pepijat dan jangan lupa untuk menerangkan secara terperinci apa yang telah anda buat sehingga timbulnya ralat ini."
 
 #: templates/basemap.html:50 templates/m_basemap.html:51
 msgid "JavaScript needs to be activated to use this service."
-msgstr "JavaScript trebuie să fie activat pentru a utiliza acest serviciu."
+msgstr "JavaScript perlu diaktifkan untuk menggunakan perkhidmatan ini."
 
 #: templates/basemap.html:56 templates/m_basemap.html:59
 msgid "Last update"
-msgstr "Ultima actualizare"
+msgstr "Kemas kini terkini"
 
 #: templates/basemap.html:58 templates/m_basemap.html:64
 #: templates/routes/info.html:90 templates/routes/list.html:39
@@ -161,54 +161,54 @@ msgstr ""
 
 #: templates/basemap.html:58
 msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "umbrele reliefului furnizate de [Hike & Bike Map](http://hikebikemap.de)"
+msgstr "bayangan bukit oleh [Hike & Bike Map](http://hikebikemap.de)"
 
 #: templates/basemap.html:65 templates/m_basemap.html:57
 msgid "About this map"
-msgstr "Despre această hartă"
+msgstr "Perihal peta ini"
 
 #. Translators: Do not translate "osmc:symbol".
 #: templates/osmc_symbols.html:26
 msgid "osmc:symbol tag values displayed on the map"
-msgstr "valorile etichetei osmc:symbol afișate pe hartă"
+msgstr "nilai tag osmc:symbol dipaparkan pada peta"
 
 #: templates/osmc_symbols.html:27
 msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
-msgstr "Pentru informații cu privire la sintaxă, consultați pagina despre [eticheta osmc:symbol](osmc)."
+msgstr "Untuk keterangan tentang sintaks, sila baca halaman tentang [the osmc:symbol tag](osmc)."
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
 #: templates/osmc_symbols.html:29
 msgid "Foreground"
-msgstr "Prim plan"
+msgstr "Latar hadapan"
 
 #: templates/osmc_symbols.html:35
 msgid "Background"
-msgstr "Fundal"
+msgstr "Latar belakang"
 
 #: templates/routes/error.html:9
 msgid "Error processing data"
-msgstr "Eroare la prelucrarea datelor"
+msgstr "Ralat ketika memproses data"
 
 #: templates/routes/info.html:19
 msgid "Center map on route"
-msgstr "Centrează harta pe traseu"
+msgstr "Ketengahkan peta pada jalan"
 
 #: templates/routes/info.html:20
 msgid "Download GPX"
-msgstr "Descărcare GPX"
+msgstr "Muat Turun GPX"
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:27
 msgid "Note"
-msgstr "Notă"
+msgstr "Catatan"
 
 #: templates/routes/info.html:43
 msgid "Links"
-msgstr "Legături"
+msgstr "Pautan"
 
 #: templates/routes/info.html:46
 msgid "Website"
-msgstr "Site web"
+msgstr "Tapak sesawang"
 
 #: templates/routes/info.html:51
 #, optional
@@ -217,87 +217,87 @@ msgstr ""
 
 #: templates/routes/info.html:58
 msgid "Sections"
-msgstr "Secțiuni"
+msgstr "Bahagian"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
 #: templates/routes/info.html:68
 msgid "Part of"
-msgstr "Parte din"
+msgstr "Sebahagian daripada"
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
 #: templates/routes/info.html:79
 msgid "OpenStreetMap tags"
-msgstr "Etichete OpenStreetMap"
+msgstr "Tag OpenStreetMap"
 
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
-msgstr "Ne pare rău, nu există nici un traseu cu ID-ul %(id)s."
+msgstr "Maaf, tiada jalan dengan ID %(id)s."
 
 #: templates/routes/list.html:11
 msgid "Routes in area"
-msgstr "Trasee în zonă"
+msgstr "Jalan sekitar"
 
 #: templates/routes/list.html:32
 msgid "Zoom in to see more routes"
-msgstr "Măriți pentru a vedea mai multe trasee"
+msgstr "Zum dekat untuk melihat jalan lain"
 
 #: templates/search/noresults.html:11
 msgid "No results."
-msgstr "Niciun rezultat."
+msgstr "Tiada hasil."
 
 #: templates/search/result.html:20
 msgid "More results…"
-msgstr "Mai multe rezultate..."
+msgstr "Hasil lain..."
 
 #: templates/snippets/langchooser.html:10
 msgid "Choose language..."
-msgstr "Alegeți limba..."
+msgstr "Pilih bahasa..."
 
 #: templates/snippets/mapswitcher.html:13
 msgid "Base map"
-msgstr "Harta de bază"
+msgstr "Peta asas"
 
 #: templates/snippets/mapswitcher.html:15
 msgid "Route layer"
-msgstr "Stratul traseelor"
+msgstr "Lapisan jalan"
 
 #: templates/snippets/mapswitcher.html:17
 msgid "Hill shading"
-msgstr "Umbra reliefului"
+msgstr "Bayangan bukit"
 
 #: templates/snippets/searchbox.html:5
 msgid "Search"
-msgstr "Căutare"
+msgstr "Cari"
 
 #: templates/snippets/searchbox.html:7
 msgid "Go"
-msgstr "Du-te"
+msgstr "Pergi"
 
 #: templates/snippets/sidebar.html:10 templates/snippets/sidebar.html.py:24
 msgid "Routes"
-msgstr "Trasee"
+msgstr "Jalan"
 
 #. Translators: Beware of doing a direct translation of 'Loading'. In many languages there are many much better alternatives, just think about synonyms such as 'fetching' and 'getting'.
 #: templates/snippets/sidebar.html:17 templates/snippets/sidebar.html.py:26
 #: templates/snippets/sidebar.html:28 templates/snippets/sidebar.html.py:35
 msgid "Loading data…"
-msgstr "Se încarcă datele..."
+msgstr "Memuatkan data…"
 
 #. Translators: This is the heading for search results, the search phrase will be appended, f.ex. 'Searching for Alps'.
 #: templates/snippets/sidebar.html:23
 msgid "Searching for"
-msgstr "Căutare pentru"
+msgstr "Mencari"
 
 #: templates/snippets/sidebar.html:27
 msgid "Places"
-msgstr "Locuri"
+msgstr "Tempat"
 
 #: templates/snippets/sidebar.html:33
 msgid "Back to route list"
-msgstr "Înapoi la lista cu trasee"
+msgstr "Kembali ke senarai jalan"
 
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
-msgstr "Înapoi la rezultatele căutării"
+msgstr "Kembali ke hasil carian"
 

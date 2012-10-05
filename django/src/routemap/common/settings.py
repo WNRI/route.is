@@ -17,6 +17,8 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 # Django settings, common for all the route maps
+# You can define your own local settings in settings_local.py to prevent
+# conflict when updating Waymarked Trails.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -84,11 +86,12 @@ MEDIA_ROOT = _BASEDIR + '../static/'
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/static/'
 
-# Available interface translations. Listed alphabetically (by you) by language self name. Non-latin charset names listed as if transliterated to latin script. Has to be activated in your local django global_settings.py as well to take effect.
+# Available interface translations. Listed alphabetically (by you) by language self name. Non-latin charset names listed as if transliterated to latin script.
 LANGUAGES = (
   ('ar', 'العربية'),	# Transliterates to "al'erebyh" at http://mylanguages.org/arabic_romanization.php
   ('ast', 'Asturianu'),
   ('id', 'Bahasa Indonesia'),
+  ('ms', 'Bahasa Melayu'),
   ('br', 'Brezhoneg'),
   ('bxr', 'Буряад'),  # Transliterates to "Buryaad"
   ('ca', 'Català'),
@@ -106,7 +109,7 @@ LANGUAGES = (
   ('is', 'Íslenska'),
   ('it', 'Italiano'),
   ('hu', 'Magyar'),
-  ('mk', 'Македонски'),  # Transliterates to "Makedonski" at http://translit.cc/
+  ('mk', 'Македонски'),  # Transliterates to "Makedonski" (http://translit.cc/)
   ('nl', 'Nederlands'),  
   ('ja', '日本語'),      # Transliterates to "Nihongo"
   ('nb', 'Norsk (bokmål)'),
@@ -116,7 +119,7 @@ LANGUAGES = (
   ('pt', 'Português'),
   ('ksh', 'Ripoarisch'),
   ('ro', 'Română'),
-  ('ru', 'Русский'),    # Transliterates to "Russkij" at http://translit.cc/
+  ('ru', 'Русский'),    # Transliterates to "Russkij" (http://translit.cc/)
   ('fi', 'Suomi'),
   ('sl', 'Slovenščina'),
   ('sr-el', 'Serbian'),
@@ -126,6 +129,7 @@ LANGUAGES = (
   ('vi', 'Tiếng Việt'),
   ('tly', 'толышә зывон'), # Transliterates to "Tolishe zivon"
   ('tr', 'Türkçe'),
+  ('uk', 'українська'),    # Transliterates to 'ukrayins"ka' (http://translit.cc/)
   ('vec', 'Vèneto'),
   ('diq', 'Zazaki'),
   ('zh-cn', '中文(简体)'), # Transliterates to "Zhōngwén"
@@ -194,8 +198,8 @@ INSTALLED_APPS = (
 #    'django.contrib.gis',
 )
 
-ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/norge_utsnitt_900913.vrt'
-ELEVATION_PROFILE_TMP_DIR = '/tmp'
+ELEVATION_PROFILE_DEM = _BASEDIR + '../static/elevationdem/DEM.vrt'
+ELEVATION_PROFILE_TMP_DIR = '/tmp/rasterprofile-cache'
 ELEVATION_PROFILE_ERROR_IMG = _BASEDIR + '../static/img/noelevationprofile.gif'
 
 ROUTEMAP_NOMINATIM_URL = 'http://nominatim.openstreetmap.org/search'

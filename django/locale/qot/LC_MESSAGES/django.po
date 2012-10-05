@@ -8,7 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2012-09-11 17:17+0000\n"
+=======
+"POT-Creation-Date: 2012-09-25 23:58+0200\n"
+>>>>>>> elevationprofile
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -17,11 +21,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+<<<<<<< HEAD
 #: src/routemap/cycling/settings.py:36 templates/basemap.html:74
+=======
+#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
+>>>>>>> elevationprofile
 msgid "Cycling"
 msgstr ""
 
 #: src/routemap/cycling/settings.py:37
+<<<<<<< HEAD
 msgid ""
 "OSM based map with international, national, regional and local cycling "
 "routes highlighted."
@@ -29,10 +38,18 @@ msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/hiking/settings.py:34 templates/basemap.html:73
+=======
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
+>>>>>>> elevationprofile
 msgid "Hiking"
 msgstr ""
 
 #: src/routemap/hiking/settings.py:35
+<<<<<<< HEAD
 msgid ""
 "OSM based map with international, national, regional and local walking "
 "routes highlighted."
@@ -40,10 +57,18 @@ msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/mtbmap/settings.py:36 templates/basemap.html:75
+=======
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
+#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
+>>>>>>> elevationprofile
 msgid "MTB"
 msgstr ""
 
 #: src/routemap/mtbmap/settings.py:37
+<<<<<<< HEAD
 msgid ""
 "OSM based map with international, national, regional and local mountain-"
 "biking routes highlighted."
@@ -51,13 +76,24 @@ msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
 #: src/routemap/skating/settings.py:35 templates/basemap.html:76
+=======
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
+msgstr ""
+
+#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
+#: src/routemap/skating/settings.py:35 templates/basemap.html:73
+>>>>>>> elevationprofile
 msgid "Inline Skating"
 msgstr ""
 
 #: src/routemap/skating/settings.py:36
+<<<<<<< HEAD
 msgid ""
 "OSM based map with international, national, regional and local skating "
 "routes highlighted."
+=======
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
+>>>>>>> elevationprofile
 msgstr ""
 
 #: src/routemap/views/helppages.py:45
@@ -75,9 +111,7 @@ msgstr ""
 
 #. Translators: This message will very rarely be shown, and likely only to people who have manipulated the URL. For more info about bbox: http://wiki.openstreetmap.org/wiki/Bounding_Box
 #: src/routemap/views/routeinfo.py:46 src/routemap/views/routeinfo.py:57
-msgid ""
-"Invalid coordinates given for the map area. Check the bbox parameter in the "
-"URL."
+msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr ""
 
 #: src/routemap/views/routeinfo.py:102
@@ -128,7 +162,7 @@ msgstr ""
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
-#: templates/routes/info.html:9 templates/routes/info_error.html:9
+#: templates/routes/info.html:12 templates/routes/info_error.html:9
 #: templates/routes/list.html:8 templates/search/noresults.html:8
 #: templates/search/places.html:8 templates/search/result.html:8
 msgid "Back to map"
@@ -139,9 +173,7 @@ msgid "Page not found"
 msgstr ""
 
 #: templates/404.html:28
-msgid ""
-"It looks like the page you are looking for doesn't exist. If you think that "
-"you have found a broken link, don't hesitate to contact us."
+msgid "It looks like the page you are looking for doesn't exist. If you think that you have found a broken link, don't hesitate to contact us."
 msgstr ""
 
 #: templates/500.html:27
@@ -149,9 +181,7 @@ msgid "Internal Server Error"
 msgstr ""
 
 #: templates/500.html:28
-msgid ""
-"Something very unexpected just happend on the server. Please, file a bug "
-"report and don't forget to describe in detail what you did to see this error."
+msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr ""
 
 #: templates/basemap.html:53 templates/m_basemap.html:55
@@ -162,10 +192,17 @@ msgstr ""
 msgid "Last update"
 msgstr ""
 
+<<<<<<< HEAD
 #: templates/basemap.html:61 templates/m_basemap.html:68
 msgid ""
 "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
 "([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+=======
+#: templates/basemap.html:58 templates/m_basemap.html:64
+#: templates/routes/info.html:90 templates/routes/list.html:39
+#: templates/search/places.html:25 templates/search/result.html:26
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+>>>>>>> elevationprofile
 msgstr ""
 
 #: templates/basemap.html:61
@@ -182,9 +219,7 @@ msgid "osmc:symbol tag values displayed on the map"
 msgstr ""
 
 #: templates/osmc_symbols.html:27
-msgid ""
-"For information about the syntax, see the page about [the osmc:symbol tag]"
-"(osmc)."
+msgid "For information about the syntax, see the page about [the osmc:symbol tag](osmc)."
 msgstr ""
 
 #. Translators: The foreground is a kind of symbol, f. ex. "black_cross".
@@ -200,11 +235,11 @@ msgstr ""
 msgid "Error processing data"
 msgstr ""
 
-#: templates/routes/info.html:16
+#: templates/routes/info.html:19
 msgid "Center map on route"
 msgstr ""
 
-#: templates/routes/info.html:17
+#: templates/routes/info.html:20
 msgid "Download GPX"
 msgstr ""
 
@@ -227,6 +262,7 @@ msgid "Meters above sea level"
 msgstr ""
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
+<<<<<<< HEAD
 #: templates/routes/info.html:33
 msgid "Note"
 msgstr ""
@@ -244,17 +280,45 @@ msgid "Wikipedia"
 msgstr ""
 
 #: templates/routes/info.html:64
+=======
+#: templates/routes/info.html:27
+msgid "Note"
+msgstr ""
+
+#: templates/routes/info.html:43
+msgid "Links"
+msgstr ""
+
+#: templates/routes/info.html:46
+msgid "Website"
+msgstr ""
+
+#: templates/routes/info.html:51
+msgid "Wikipedia"
+msgstr ""
+
+#: templates/routes/info.html:58
+>>>>>>> elevationprofile
 msgid "Sections"
 msgstr ""
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
+<<<<<<< HEAD
 #: templates/routes/info.html:74
+=======
+#: templates/routes/info.html:68
+>>>>>>> elevationprofile
 msgid "Part of"
 msgstr ""
 
 #. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
+<<<<<<< HEAD
 #: templates/routes/info.html:85
 msgid "Tags"
+=======
+#: templates/routes/info.html:79
+msgid "OpenStreetMap tags"
+>>>>>>> elevationprofile
 msgstr ""
 
 #: templates/routes/info_error.html:14
