@@ -205,6 +205,6 @@ ROUTEMAP_TILE_BASEURL = 'http://tile.waymarkedtrails.org'
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/tmp',
+        'LOCATION': '/tmp/waymarkedtrails-cache',
     }
 }
