@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Map Project\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2012-09-11 17:17+0000\n"
-=======
-"POT-Creation-Date: 2012-09-25 23:58+0200\n"
->>>>>>> elevationprofile
+"POT-Creation-Date: 2012-10-05 18:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sarah Hoffmann <lonvia@denofr.de>\n"
 "Language: \n"
@@ -21,79 +17,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-<<<<<<< HEAD
-#: src/routemap/cycling/settings.py:36 templates/basemap.html:74
-=======
-#: src/routemap/cycling/settings.py:36 templates/basemap.html:71
->>>>>>> elevationprofile
+#: src/routemap/cycling/settings.py:36
 msgid "Cycling"
 msgstr ""
 
 #: src/routemap/cycling/settings.py:37
-<<<<<<< HEAD
-msgid ""
-"OSM based map with international, national, regional and local cycling "
-"routes highlighted."
-msgstr ""
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:34 templates/basemap.html:73
-=======
 msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:34 templates/basemap.html:70
->>>>>>> elevationprofile
+#: src/routemap/hiking/settings.py:34
 msgid "Hiking"
 msgstr ""
 
 #: src/routemap/hiking/settings.py:35
-<<<<<<< HEAD
-msgid ""
-"OSM based map with international, national, regional and local walking "
-"routes highlighted."
-msgstr ""
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:75
-=======
 msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:36 templates/basemap.html:72
->>>>>>> elevationprofile
+#: src/routemap/mtbmap/settings.py:36
 msgid "MTB"
 msgstr ""
 
 #: src/routemap/mtbmap/settings.py:37
-<<<<<<< HEAD
-msgid ""
-"OSM based map with international, national, regional and local mountain-"
-"biking routes highlighted."
-msgstr ""
-
-#. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:35 templates/basemap.html:76
-=======
 msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:35 templates/basemap.html:73
->>>>>>> elevationprofile
+#: src/routemap/skating/settings.py:35
 msgid "Inline Skating"
 msgstr ""
 
 #: src/routemap/skating/settings.py:36
-<<<<<<< HEAD
-msgid ""
-"OSM based map with international, national, regional and local skating "
-"routes highlighted."
-=======
 msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
->>>>>>> elevationprofile
 msgstr ""
 
 #: src/routemap/views/helppages.py:45
@@ -163,8 +119,8 @@ msgstr ""
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
 #: templates/routes/info.html:12 templates/routes/info_error.html:9
-#: templates/routes/list.html:8 templates/search/noresults.html:8
-#: templates/search/places.html:8 templates/search/result.html:8
+#: templates/routes/list.html:11 templates/search/noresults.html:8
+#: templates/search/places.html:10 templates/search/result.html:10
 msgid "Back to map"
 msgstr ""
 
@@ -192,21 +148,14 @@ msgstr ""
 msgid "Last update"
 msgstr ""
 
-<<<<<<< HEAD
 #: templates/basemap.html:61 templates/m_basemap.html:68
-msgid ""
-"Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors "
-"([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
-=======
-#: templates/basemap.html:58 templates/m_basemap.html:64
-#: templates/routes/info.html:90 templates/routes/list.html:39
-#: templates/search/places.html:25 templates/search/result.html:26
+#: templates/routes/info.html:88 templates/routes/list.html:42
+#: templates/search/places.html:27 templates/search/result.html:28
 msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
->>>>>>> elevationprofile
 msgstr ""
 
-#: templates/basemap.html:61
-msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
+#: templates/basemap.html:61 templates/m_basemap.html:68
+msgid "Kartgrunnlag: [Kartverket](http://www.statkart.no/), [Geovekst](http://www.statkart.no/nor/Land/Fagomrader/Geovekst/) og [kommuner](http://www.statkart.no/?module=Articles;action=Article.publicShow;ID=14194)"
 msgstr ""
 
 #: templates/basemap.html:68 templates/m_basemap.html:61
@@ -243,82 +192,46 @@ msgstr ""
 msgid "Download GPX"
 msgstr ""
 
-#: templates/routes/info.html:21
+#: templates/routes/info.html:24
 msgid "Elevation profile is loading"
 msgstr ""
 
-#: templates/routes/info.html:23
-msgid ""
-"No elevation shown profile because route is too complex, or elevation data "
-"is lacking."
+#: templates/routes/info.html:26
+msgid "No elevation shown profile because route is too complex, or elevation data is lacking."
 msgstr ""
 
-#: templates/routes/info.html:24
+#: templates/routes/info.html:27
 msgid "Distance"
 msgstr ""
 
-#: templates/routes/info.html:25
+#: templates/routes/info.html:28
 msgid "Meters above sea level"
 msgstr ""
 
 #. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
-<<<<<<< HEAD
-#: templates/routes/info.html:33
+#: templates/routes/info.html:36
 msgid "Note"
-msgstr ""
-
-#: templates/routes/info.html:49
-msgid "Links"
 msgstr ""
 
 #: templates/routes/info.html:52
-msgid "Website"
-msgstr ""
-
-#: templates/routes/info.html:57
-msgid "Wikipedia"
-msgstr ""
-
-#: templates/routes/info.html:64
-=======
-#: templates/routes/info.html:27
-msgid "Note"
-msgstr ""
-
-#: templates/routes/info.html:43
 msgid "Links"
 msgstr ""
 
-#: templates/routes/info.html:46
+#: templates/routes/info.html:55
 msgid "Website"
 msgstr ""
 
-#: templates/routes/info.html:51
+#: templates/routes/info.html:60
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:58
->>>>>>> elevationprofile
+#: templates/routes/info.html:67
 msgid "Sections"
 msgstr ""
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-<<<<<<< HEAD
-#: templates/routes/info.html:74
-=======
-#: templates/routes/info.html:68
->>>>>>> elevationprofile
+#: templates/routes/info.html:77
 msgid "Part of"
-msgstr ""
-
-#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-<<<<<<< HEAD
-#: templates/routes/info.html:85
-msgid "Tags"
-=======
-#: templates/routes/info.html:79
-msgid "OpenStreetMap tags"
->>>>>>> elevationprofile
 msgstr ""
 
 #: templates/routes/info_error.html:14
@@ -326,11 +239,11 @@ msgstr ""
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr ""
 
-#: templates/routes/list.html:11
+#: templates/routes/list.html:14
 msgid "Routes in area"
 msgstr ""
 
-#: templates/routes/list.html:32
+#: templates/routes/list.html:35
 msgid "Zoom in to see more routes"
 msgstr ""
 
@@ -338,7 +251,7 @@ msgstr ""
 msgid "No results."
 msgstr ""
 
-#: templates/search/result.html:20
+#: templates/search/result.html:22
 msgid "More results…"
 msgstr ""
 

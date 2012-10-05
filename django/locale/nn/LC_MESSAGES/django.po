@@ -10,10 +10,9 @@
 #
 msgid ""
 msgstr ""
-""
 "Project-Id-Version: Waymarked Trails\n"
-"Report-Msgid-Bugs-To: translatewiki.net\n"
-"POT-Creation-Date: 2012-04-22 20:44+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-05 18:40+0200\n"
 "PO-Revision-Date: 2012-08-19 16:20:12+0000\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language: nn\n"
@@ -26,39 +25,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/cycling/settings.py:32 templates/basemap.html:71
+#: src/routemap/cycling/settings.py:36
 msgid "Cycling"
 msgstr "Sykkelruter"
 
-#: src/routemap/cycling/settings.py:33
-msgid "OSM based map with international, national, regional and local cycling routes highlighted."
+#: src/routemap/cycling/settings.py:37
+msgid "Waymarked Trails shows cycling routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/hiking/settings.py:31 templates/basemap.html:70
+#: src/routemap/hiking/settings.py:34
 msgid "Hiking"
 msgstr "Vandreruter"
 
-#: src/routemap/hiking/settings.py:32
-msgid "OSM based map with international, national, regional and local walking routes highlighted."
+#: src/routemap/hiking/settings.py:35
+msgid "Waymarked Trails shows hiking routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
-#: src/routemap/mtbmap/settings.py:32 templates/basemap.html:72
+#: src/routemap/mtbmap/settings.py:36
 msgid "MTB"
 msgstr "Terrengsykkelruter"
 
-#: src/routemap/mtbmap/settings.py:33
-msgid "OSM based map with international, national, regional and local mountain-biking routes highlighted."
+#: src/routemap/mtbmap/settings.py:37
+msgid "Waymarked Trails shows mountain biking (MTB) routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ".
-#: src/routemap/skating/settings.py:31 templates/basemap.html:73
+#: src/routemap/skating/settings.py:35
 msgid "Inline Skating"
 msgstr "Inline-skøyte-ruter"
 
-#: src/routemap/skating/settings.py:32
-msgid "OSM based map with international, national, regional and local skating routes highlighted."
+#: src/routemap/skating/settings.py:36
+msgid "Waymarked Trails shows inline skating routes from the local to international level, with maps and information from OpenStreetMap."
 msgstr ""
 
 #: src/routemap/views/helppages.py:45
@@ -79,19 +78,19 @@ msgstr "Inkje gyldig område er spesifisert."
 msgid "Invalid coordinates given for the map area. Check the bbox parameter in the URL."
 msgstr "Koordinata for området er ugyldige."
 
-#: src/routemap/views/routeinfo.py:101
+#: src/routemap/views/routeinfo.py:102
 #, python-format
 msgid "%s m"
 msgstr ""
 
-#: src/routemap/views/routeinfo.py:103 src/routemap/views/routeinfo.py:105
+#: src/routemap/views/routeinfo.py:104 src/routemap/views/routeinfo.py:106
 #, python-format
 msgid "%s km"
 msgstr ""
 
 #. Translators: The length of a route is presented with two values, this is the
 #. length that has been mapped so far and is actually visible on the map.
-#: src/routemap/views/routeinfo.py:127
+#: src/routemap/views/routeinfo.py:128
 msgid "Mapped length"
 msgstr "Vist på kartet"
 
@@ -99,37 +98,37 @@ msgstr "Vist på kartet"
 #. length given in the information about the route.
 #. More information about specifying route length in OSM here:
 #. http://wiki.openstreetmap.org/wiki/Key:distance
-#: src/routemap/views/routeinfo.py:134
+#: src/routemap/views/routeinfo.py:135
 msgid "Official length"
 msgstr "Offisiell lengd"
 
 #. Translators: This is someone responsible for maintaining the route. Normally
 #. an organisation. Read more: http://wiki.openstreetmap.org/wiki/Key:operator
-#: src/routemap/views/routeinfo.py:138
+#: src/routemap/views/routeinfo.py:139
 msgid "Operator"
 msgstr "Ansvarleg"
 
-#: src/routemap/views/routeinfo.py:295
+#: src/routemap/views/routeinfo.py:296
 msgid "continental"
 msgstr "kontinental"
 
-#: src/routemap/views/routeinfo.py:296
+#: src/routemap/views/routeinfo.py:297
 msgid "national"
 msgstr "nasjonal"
 
-#: src/routemap/views/routeinfo.py:297
+#: src/routemap/views/routeinfo.py:298
 msgid "regional"
 msgstr "regional"
 
-#: src/routemap/views/routeinfo.py:298
+#: src/routemap/views/routeinfo.py:299
 msgid "other"
 msgstr "andre"
 
 #: templates/404.html:22 templates/500.html:22 templates/docpage.html:27
 #: templates/osmc_symbols.html:21 templates/routes/error.html:7
-#: templates/routes/info.html:9 templates/routes/info_error.html:9
-#: templates/routes/list.html:8 templates/search/noresults.html:8
-#: templates/search/places.html:8 templates/search/result.html:8
+#: templates/routes/info.html:12 templates/routes/info_error.html:9
+#: templates/routes/list.html:11 templates/search/noresults.html:8
+#: templates/search/places.html:10 templates/search/result.html:10
 msgid "Back to map"
 msgstr "Tilbake til kartet"
 
@@ -149,23 +148,26 @@ msgstr "Intern tenarfeil"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Noko veldig uføresett skjedde nettopp på tenaren. Me set stor pris på om du sender oss ei feilmelding der du skildrar i detalj kva du gjorde før du kom til denne feilmeldinga."
 
-#: templates/basemap.html:50 templates/m_basemap.html:51
+#: templates/basemap.html:53 templates/m_basemap.html:55
 msgid "JavaScript needs to be activated to use this service."
 msgstr "JavaScript må vere aktivert for å bruke denne tenesta."
 
-#: templates/basemap.html:56 templates/m_basemap.html:59
+#: templates/basemap.html:59 templates/m_basemap.html:63
 msgid "Last update"
 msgstr "Sist oppdatert"
 
-#: templates/basemap.html:58 templates/m_basemap.html:64
-msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+#: templates/basemap.html:61 templates/m_basemap.html:68
+#: templates/routes/info.html:88 templates/routes/list.html:42
+#: templates/search/places.html:27 templates/search/result.html:28
+#, fuzzy
+msgid "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Kartdata av [OpenStreetMap](http://www.openstreetmap.org) og bidragsytarar ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
 
-#: templates/basemap.html:58
-msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr "høgdelag av [Hike & Bike Map](http://hikebikemap.de)"
+#: templates/basemap.html:61 templates/m_basemap.html:68
+msgid "Kartgrunnlag: [Kartverket](http://www.statkart.no/), [Geovekst](http://www.statkart.no/nor/Land/Fagomrader/Geovekst/) og [kommuner](http://www.statkart.no/?module=Articles;action=Article.publicShow;ID=14194)"
+msgstr ""
 
-#: templates/basemap.html:65 templates/m_basemap.html:57
+#: templates/basemap.html:68 templates/m_basemap.html:61
 msgid "About this map"
 msgstr "Om kartet"
 
@@ -191,56 +193,66 @@ msgstr "Bakgrunn"
 msgid "Error processing data"
 msgstr "Datahandsamingsfeil"
 
-#: templates/routes/info.html:16
+#: templates/routes/info.html:19
 msgid "Center map on route"
 msgstr "Sentrer kartet på ruta"
 
-#: templates/routes/info.html:17
+#: templates/routes/info.html:20
 msgid "Download GPX"
 msgstr "Last ned GPX-fil"
 
-#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
 #: templates/routes/info.html:24
+msgid "Elevation profile is loading"
+msgstr ""
+
+#: templates/routes/info.html:26
+msgid "No elevation shown profile because route is too complex, or elevation data is lacking."
+msgstr ""
+
+#: templates/routes/info.html:27
+msgid "Distance"
+msgstr ""
+
+#: templates/routes/info.html:28
+msgid "Meters above sea level"
+msgstr ""
+
+#. Translators: This is a note left by mappers, see http://wiki.openstreetmap.org/wiki/Key:note
+#: templates/routes/info.html:36
 msgid "Note"
 msgstr "Melding"
 
-#: templates/routes/info.html:40
+#: templates/routes/info.html:52
 msgid "Links"
 msgstr "Lenkjer"
 
-#: templates/routes/info.html:43
+#: templates/routes/info.html:55
 msgid "Website"
 msgstr "Vevside"
 
-#: templates/routes/info.html:48
-#, optional
+#: templates/routes/info.html:60
 msgid "Wikipedia"
 msgstr ""
 
-#: templates/routes/info.html:55
+#: templates/routes/info.html:67
 msgid "Sections"
 msgstr "Deler"
 
 #. Translators: If a route is part of other route(s), those routes will be listed under this heading. Read more at http://waymarkedtrails.org/help/rendering/hierarchies
-#: templates/routes/info.html:65
+#: templates/routes/info.html:77
 msgid "Part of"
 msgstr "Del av"
-
-#. Translators: Tags has the OSM-specific meaning here of a key/value pair describing the object. Most of the time it might better be left untranslated. Read more at http://wiki.openstreetmap.org/wiki/Tags
-#: templates/routes/info.html:76
-msgid "Tags"
-msgstr "Merkelappar"
 
 #: templates/routes/info_error.html:14
 #, python-format
 msgid "Sorry, there is no route with ID %(id)s."
 msgstr "Det finst inga rute med ID %(id)s."
 
-#: templates/routes/list.html:11
+#: templates/routes/list.html:14
 msgid "Routes in area"
 msgstr "Ruter i kartutsnittet"
 
-#: templates/routes/list.html:32
+#: templates/routes/list.html:35
 msgid "Zoom in to see more routes"
 msgstr "Det finst fleire ruter i området, zoom inn for å sjå dei."
 
@@ -248,7 +260,7 @@ msgstr "Det finst fleire ruter i området, zoom inn for å sjå dei."
 msgid "No results."
 msgstr "Ingen resultat."
 
-#: templates/search/result.html:20
+#: templates/search/result.html:22
 msgid "More results…"
 msgstr "Fleire resultat"
 
@@ -302,4 +314,3 @@ msgstr "Liste over ruter"
 #: templates/snippets/sidebar.html:34
 msgid "Back to search results"
 msgstr "Tilbake til søkeresultat"
-
