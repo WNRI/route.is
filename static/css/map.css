@@ -51,8 +51,11 @@ body {
 }
 
 .olMap .OsgendeRouteMapPermalink {
-    top: 80px;
-    right: 4px
+    top: 75px;
+    right: 25px
+}
+.olMap .OsgendeRouteMapPermalink a{
+    color: #2a6cb7;
 }
 
 .olMap .OsgendeRouteMapMousePosition {
@@ -97,7 +100,8 @@ body {
 /*********************** language chooser ****************************/
 
 .dropdown ul {
-    left : 0
+    left : 0;
+    top: 22px;
 }
 
 
@@ -105,7 +109,6 @@ body {
 
 #map_footer {
     font-weight: bold;
-    text-indent: 3px
 }
 
 #map_footer #searchform p {

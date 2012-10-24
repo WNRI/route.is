@@ -1,6 +1,13 @@
 .header { 
-    background-color: #81AA4B;
     color: #303030
+}
+#map_header{
+	height: 56px;
+	background: transparent url(../img/bg_header.png) 0 0 repeat-x;
+}
+#map_footer{
+	height: 51px;
+	background: transparent url(../img/bg_footer.png) 0 0 repeat-x;
 }
 
 .subheader {

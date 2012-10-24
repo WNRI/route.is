@@ -19,7 +19,7 @@
 
     <!-- external libraries -->
     <!-- script src="OpenLayers/lib/Firebug/firebug.js"></script -->
-    <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-040912.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/OpenLayers-120628.js"></script>
     <!-- script src="http://www.openlayers.org/api/OpenLayers.js"></script -->
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/slider-min.js"></script>
@@ -48,24 +48,30 @@
     <script type="text/javascript" src="{{ MEDIA_URL }}/js/Search.js"></script>
 </head>
 
-<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} onload="initMap('{{ tileurl }}', false);">
+<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} class="docpage" onload="initMap('{{ tileurl }}', false);">
 
     <div id="map" tabindex="0">{% trans "JavaScript needs to be activated to use this service." %}</div>
 
-    <div id="map_header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>route.is</h1> {% include "snippets/langchooser.html"%}
-   </div>
-    <div id="map_subheader" class="subheader subheadline">
-        {% trans "Last update" %}: {{updatetime}}
-      <div class="absright">
-      {% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}, {% trans "Kartgrunnlag: [Kartverket](http://www.statkart.no/), [Geovekst](http://www.statkart.no/nor/Land/Fagomrader/Geovekst/) og [kommuner](http://www.statkart.no/?module=Articles;action=Article.publicShow;ID=14194)"|markdown|filterpara %}
-     </div>
+    <div id="map_header" class="header headline">
+        <h1><a href="#" title="route.is" class="logo"></a></h1>
+        {% include "snippets/langchooser.html"%}
     </div>
 
     <div id="map_footer" class="header footline">
         {% include "snippets/searchbox.html" %}
         <div id="map_right_footer" class="absright">
-          <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
+            <ul class="footer_menu">
+                <li class="f_menu_about">
+                    <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
+                </li>
+                <li class="f_menu_update">
+                    {% trans "Last update" %}: {{updatetime}}
+                </li>
+                <li class="f_menu_info">
+                    {% trans "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"|markdown|filterpara  %}, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}
+                </li>
+            </ul>
+          
         </div>
     </div>
 

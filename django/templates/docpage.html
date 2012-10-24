@@ -18,34 +18,33 @@
 </head>
 
 
-<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} class="docpage">
 
-    <div id="header" class="header headline" style="background-image:url('{{ MEDIA_URL }}/img/{{ bgimage }}')">
-        <h1>route.is</h1> {% include "snippets/langchooser.html"%}
-    </div>
-    <div id="subheader" class="subheader subheadline">
-        <a class="menu" href="{% url simplemap %}">{% trans "Back to map" %}</a>
-    </div>
-
-    <div id="menubar">
-        <ul class="sidemenu">
-            {% for item in menu %}
-            {% ifequal item 'SUBMENU' %}<ul>
-            {% else %}{% ifequal item '/SUBMENU' %}</ul>
-        {% else %}<li><a href="{% url helppage item.0 %}">{{item.1}}</a></li>
-            {% endifequal %}{% endifequal %}
-            {% endfor %}
-        </ul>
+    
+    <div id="map_header" class="header headline">
+        <h1><a href="#" title="route.is" class="logo"></a></h1>
+        {% include "snippets/langchooser.html"%}
     </div>
 
-    <div id="mainpage">
-        <h1>{{title}}</h1>    
-        <div class="rest">{{content|markdown}}</div>
+    <div class="docpage-wrapper">
+        <div id="menubar">
+            <a class="menu back-btn" href="{% url simplemap %}">{% trans "Back to map" %}</a>
+            <ul class="sidemenu">
+                {% for item in menu %}
+                {% ifequal item 'SUBMENU' %}<ul>
+                {% else %}{% ifequal item '/SUBMENU' %}</ul>
+            {% else %}<li><a href="{% url helppage item.0 %}">{{item.1}}</a></li>
+                {% endifequal %}{% endifequal %}
+                {% endfor %}
+            </ul>
+        </div>
 
-
-<div id="footer">
-</div>
-
+        <div id="mainpage">
+            <h1>{{title}}</h1>    
+            <div class="rest">{{content|markdown}}</div>
+            <div id="footer">
+            </div>
+        </div>
     </div>
 </body>
 </html>
