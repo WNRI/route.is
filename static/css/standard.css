@@ -16,6 +16,7 @@ h1 {
     float: left;
     width: 182px;
     padding-left: 52px;
+	
 }
 
 .docpage{
@@ -94,5 +95,17 @@ h1 {
 .dropdown ul {
     left : 0
 }
-
+.responsive-menu {display:block;padding-lefT:15px; background: url(../img/open_arrow.png) 0 5px no-repeat; color:#333;font-size:14px;margin-left:10px; margin-top:7px; display:none;}
+@media screen and (max-width: 480px){
+.responsive-menu {display:block;}
+.docpage {background-image:none;} 
+#menubar{float:none; position:absolute; bottom:0px; width:100%; height:35px; background-color:#eaeaea; padding-lefT:0px;}
+#menubar.active {height:auto;}
+#menubar.active  .responsive-menu {background:url(../img/close_arrow.png) 0 5px no-repeat;margin-bottom:12px;}
+.sidemenu {display:none;} 
+#menubar.active .sidemenu {margin-left:15px;display:block;} 
+#menubar.active  .sidemenu > li{background: url(../img/responsive_divider.png) 0 0 no-repeat;} 
+.menu.back-btn {position:absolute; bottom:12px; right:10px;}
+#mainpage{padding-bottom:35px;}
+}
 

@@ -14,11 +14,11 @@
 <div class="routewin">
 
 <h1><div class="subtitle"><img src="{{ MEDIA_URL }}/{{ symbolpath }}/{{route.symbol}}.png"> <a href="http://www.openstreetmap.org/browse/relation/{{route.id}}">{{route.id}}</a></div>
-{{route.name}}<br>
-
- <a href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><img src="{{ MEDIA_URL }}/img/target.png"></a>
- <a href="{% url route_gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
+{{route.name}}
  </h1>
+
+ <a class="center-route" href="{% url relationmap route.id %}" title="{% trans 'Center map on route' %}"><img src="{{ MEDIA_URL }}/img/target.png"></a>
+ <a href="{% url route_gpx route.id %}" title="{% trans 'Download GPX' %}"><img src="{{ MEDIA_URL}}/img/gpx.png"></a>
 
 <div class="elevationprofileClass">
     <div id="elevationProfileLoader"><img src="{{ MEDIA_URL }}/img/ajax-loader.gif"><br /> {% trans 'Elevation profile is loading' %}</div>

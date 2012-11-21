@@ -332,12 +332,18 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
         function(e) {
             // Empty error function for now.
         }, { enableHighAccuracy: true });
+
+        //  add class to zoombar for hiding zoomSlider
+        addClass(document.getElementById('OpenLayers.Control.PanZoomBar_5'), 'mobile-zoombar');
     }
     //XXX this should go somewhere else
     setupRouteView(map);
     initSliders(map);
     // give focus to map so zooming works
     document.getElementById('map').focus();
+
+    //  add classes to zoombar to take ability to stylize it
+    addZoombarClasses();
 }
 
 function updateLocation() {
@@ -362,4 +368,33 @@ function zoomMap(bbox) {
                   map.getProjectionObject());
     map.zoomToExtent(bnds);
     
+}
+
+function addZoombarClasses(){
+    var zoomIn = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomin'),
+        zoomInImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomin_innerImage'),
+        zoomOut = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomout'),
+        zoomOutImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomout_innerImage'),
+        zoomBar = document.getElementById('OpenLayers_Control_PanZoomBar_ZoombarOpenLayers.Map_8'),
+        zoomSlider = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8');
+        zoomSliderImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8_innerImage');
+
+    addClass(zoomIn, 'zoomIn');
+    addClass(zoomInImg, 'zoomInImg');
+    addClass(zoomOut, 'zoomOut');
+    addClass(zoomOutImg, 'zoomOutImg');
+    addClass(zoomBar, 'zoomBar');
+    addClass(zoomSlider, 'zoomSlider');
+    addClass(zoomSliderImg, 'zoomSliderImg');
+};
+
+function addClass(o, c){
+    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
+    if (re.test(o.className)) return
+    o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "")
+}
+ 
+function removeClass(o, c){
+    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
+    o.className = o.className.replace(re, "$1").replace(/\s+/g, " ").replace(/(^ | $)/g, "")
 }

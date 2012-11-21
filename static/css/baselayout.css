@@ -305,13 +305,14 @@ li.f_menu_about{
     overflow-y: scroll;
 }
 .dropdown ul li {
-        display: block
+    display: block;
+    padding: .25ex .5em;
+    color: #999;
 }
 .dropdown ul li a {
-        display: block;
-        color: #1d3053;
-        text-decoration: none;
-        padding: .25ex .5em
+    display: block;
+    color: #1d3053;
+    text-decoration: none;
 }
 .dropdown ul li a:hover {
     color: #fff;
@@ -376,6 +377,10 @@ li.f_menu_about{
 
 }
 
+.center-route{
+    margin-left: 20px;
+}
+
 
 .sbcontent .subtitle {
     font-size: 0.6em;
@@ -386,7 +391,7 @@ li.f_menu_about{
     font-size: 1.1em;
     margin-top: 0.3em;
     margin-bottom: 0.1em;
-    background-color: #dde;
+    background-color: #f0f0f0;
 	height:27px; 
 	line-height:27px;
 	padding-left:20px;
@@ -417,13 +422,13 @@ li.f_menu_about{
 .dllist {
     margin-top: 0.8em;
     margin-bottom: 0.8em;
-    margin-left: 0.3em;
-    line-height: 150%
+    margin-left: 20px;
+    line-height: 150%;
+    color: #333;
 }
 
 .dlitem {
-    font-weight: bold;
-    padding-right: 1ex
+
 }
 
 .dllink {
@@ -506,14 +511,41 @@ padding-left:20px;
 }
 .routewin td {padding-left:10px; }
 .routewin table {margin-left:11px; margin-top:14px; margin-bottom:14px;}
-.routewin h1 {background: none;background-color:#4BA014;}
+.routewin h1 {background: #4BA014 url(../img/map_hiking.png) no-repeat 8px 6px; padding-bottom: 20px;}
 .routewin  .subtitle {display:none;}
-.sbcontent  #routebacklink {position:absolute;}
+.sbcontent  #routebacklink {
+    position:absolute;
+    top: 33px;
+    left: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-family: "CabinRegular", Tahoma, sans-serif;
+    text-decoration: nonde;
+    padding-left: 23px;
+    background: url(../img/btn_back_white.png) 0 0 no-repeat;
+}
+.routewin a{
+    color: #3876bc;
+}
 
 @media screen and (max-width: 480px){
-#langchooser {float:right; margin-right:10px;}
-#searchform {margin-left:10px;}
-#routeselector {background: url("../img/icon_routes_m.png") no-repeat scroll 0 0 transparent; bottom:0px; right:10px;}
-.footer_menu {display:none;}
-
+    #langchooser {float:right; margin-right:10px;}
+    #searchform {margin-left:10px;}
+    #routeselector {background: url("../img/icon_routes_m.png") no-repeat scroll 0 0 transparent; bottom:0px; right:10px;}
+    .footer_menu {display:none;}
+}
+@media screen and (max-width: 980px){
+    .f_menu_about{
+        display: none;
+    }
+}
+@media screen and (max-width: 840px){
+    .f_menu_update{
+        display: none;
+    }
+}
+@media screen and (max-width: 640px){
+    .f_menu_info{
+        display: none;
+    }
 }

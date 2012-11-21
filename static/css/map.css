@@ -52,7 +52,8 @@ body {
 
 .olMap .OsgendeRouteMapPermalink {
     top: 75px;
-    right: 25px
+    right: 25px;
+    display: none;
 }
 .olMap .OsgendeRouteMapPermalink a{
     color: #2a6cb7;
@@ -69,8 +70,8 @@ body {
 }
 
 .olMap .olControlPanZoomBar {
-    margin-top: 80px;
-    margin-left: 0
+    margin-top: 130px;
+    margin-left: 43px;
 }
 
 .olMap .olControlScaleLine {
@@ -78,24 +79,47 @@ body {
     font-size: 0.6em
 }
 
-/************************   side bar info    ******************************/
-
-#elevationProfileLoader {
-    display: none;
-    margin: 30px; 
+/*********************** Stylizing zoombar controls ****************************/
+/* we need to use !important to overlap styles in style="" 
+*  attribute that are generating by javascript
+*/
+.zoomIn,
+.zoomInImg,
+.zoomOut,
+.zoomOutImg{
+    width: 28px !important;
+    height: 28px !important;
+    background-repeat: no-repeat !important;
+}
+.zoomOut{
+    top: 207px !important;
+}
+.zoomBar,
+.zoomSlider,
+.zoomSliderImg{
+    width: 28px !important;
+    background-repeat: no-repeat !important;
+}
+.zoomBar{
+    height: 175px !important;
+    top: 32px !important;
+    left: 5px !important;
+    background-position: 0 -1px !important;
+}
+.zoomSlider{
+    margin-top: 9px !important;
+    height: 13px !important;
+    left: 4px !important;
+}
+.mobile-zoombar .zoomBar,
+.mobile-zoombar .zoomSlider{
+    display: none !important;
+}
+.mobile-zoombar .zoomOut{
+    top: 31px !important;
 }
 
-#elevationProfile {
-    display: none;
-    margin: 15px; 
-    width: 300px;
-    height: 200px;
-}
 
-#elevationProfileErrorText {
-    display: none;
-    margin: 15px;
-}
 
 /*********************** language chooser ****************************/
 

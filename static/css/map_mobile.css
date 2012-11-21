@@ -23,6 +23,11 @@
     margin-top: 1px
 }
 
+.logo{
+    margin-top: -4px;
+    margin-left: 0px;
+}
+
 
 /******************************    Map    *************************/
 
@@ -30,11 +35,14 @@
 .olMap .OsgendeRouteMapPermalink {
     top: 36px;
     right: 4px;
-    font-size: 12px
+    font-size: 12px;
+    display: none;
 }
 
+
 .olMap .olControlZoom {
-    top: 50px;
+    top: auto;
+    bottom: 80px;
     left: 4px;
     font-size: 40px;
     height: 40px;
@@ -46,7 +54,15 @@
 .olMap .olControlScaleLine {
     bottom: 12px;
     left: 4px;
-    font-size: 7px
+    font-size: 7px;
+}
+.olControlZoomIn,
+.olControlZoomOut{
+    border-radius: 3px !important;
+    background-color: #469000 !important;
+    padding-top: 5px !important;
+    height: 23px !important;
+    width: 28px !important;
 }
 
 /************************   side bar    ******************************/
@@ -72,7 +88,7 @@
 }
 
 #routeselector {
-    bottom: 11px;
+    bottom: 0;
 }
 
 .sidebar {
