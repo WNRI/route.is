@@ -65,6 +65,23 @@
     width: 28px !important;
 }
 
+/************************   warning upon first loading    ******************************/
+
+#dataWarning {
+    display: none;
+}
+
+#facybox {
+  position: absolute;
+  width: 95%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  text-align: left;
+  margin-top: 50px;
+}
+
+
 /************************   side bar    ******************************/
 
 

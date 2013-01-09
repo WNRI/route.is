@@ -233,6 +233,16 @@ function initMap(tileurl, ismobile) {
                            }),
                        new OpenLayers.Control.Zoom()
                       ]);
+        
+        // Check if user has a modern browser              
+        if (Modernizr.localstorage) {
+            // If first time visit or user has decided to show warning message again
+            if(localStorage.getItem("dataWarning") == "1" || localStorage.getItem("dataWarning") == null ) {
+                jQuery.facybox({ div: '#dataWarning' }); // Open warning message
+            }
+            localStorage.setItem("dataWarning", "0"); // Default do not show warning next time
+        }
+        
     } else {
         mapcontrols = mapcontrols.concat(
                      [ new OpenLayers.Control.Navigation(),
@@ -370,31 +380,24 @@ function zoomMap(bbox) {
     
 }
 
-function addZoombarClasses(){
-    var zoomIn = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomin'),
-        zoomInImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomin_innerImage'),
-        zoomOut = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomout'),
-        zoomOutImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomout_innerImage'),
-        zoomBar = document.getElementById('OpenLayers_Control_PanZoomBar_ZoombarOpenLayers.Map_8'),
-        zoomSlider = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8');
-        zoomSliderImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8_innerImage');
-
-    addClass(zoomIn, 'zoomIn');
-    addClass(zoomInImg, 'zoomInImg');
-    addClass(zoomOut, 'zoomOut');
-    addClass(zoomOutImg, 'zoomOutImg');
-    addClass(zoomBar, 'zoomBar');
-    addClass(zoomSlider, 'zoomSlider');
-    addClass(zoomSliderImg, 'zoomSliderImg');
-};
-
-function addClass(o, c){
-    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
-    if (re.test(o.className)) return
-    o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "")
+// Close data warning box programatically
+function closeDataWarning() {
+    $.facybox.close(); 
 }
- 
-function removeClass(o, c){
-    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
-    o.className = o.className.replace(re, "$1").replace(/\s+/g, " ").replace(/(^ | $)/g, "")
+
+// Check if checkbox is unchecked by user.
+// If so make sure warning message is shown next time as well. 
+function setDataWarningFutureVisibility() {
+    var stickyWarning = true;
+    $("input[type='checkbox']").each( 
+        function() { 
+            if(stickyWarning) {
+                stickyWarning = $(this).prop('checked');
+            }
+        } 
+    );
+    if(!stickyWarning) {
+        // Set localstorage
+        localStorage.setItem("dataWarning", "1");
+    }
 }
