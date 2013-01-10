@@ -67,7 +67,7 @@ function setupRouteView(m) {
 function openRouteView() {
     $('.sbcontent').addClass('invisible');
     $('#routeview').removeClass('invisible');
-    $('.sidebarsel').addClass('invisible');
+    // $('.sidebarsel').addClass('invisible');
     $('.sidebar').removeClass('invisible');
     loadRoutes();
 }
@@ -310,3 +310,10 @@ function closeSidebar() {
     $('.sidebar').addClass('invisible');
     $('.sidebarsel').removeClass('invisible');
 }
+
+// console.log($);
+// $('.close_sidebar').click(function(e){
+//     alert('test');
+//     e.preventDefault();
+//     closeSidebar();
+// });
