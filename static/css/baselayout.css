@@ -337,7 +337,7 @@ li.f_menu_about{
 
 .sidebar {
     right: 0;
-    bottom: 70px;
+    bottom: 50px;
     width: 25%;
     height: 60%;
     overflow: auto;
@@ -366,15 +366,15 @@ li.f_menu_about{
 }
 
 .sbcontent h1 {
+    padding: 5px 23px 0 54px;
 
     margin-bottom: 0.2em;
     font-size: 1.6em;
+    min-height: 30px;
 
 	background: url(../img/bg_title_list.jpg) 15px 6px no-repeat #4ba014 ;
-	padding-left:40px;
-	line-height:34px;
-	color:#ffffff;
-
+	line-height:15px;
+	color:#fff;
 }
 
 .center-route{
@@ -398,8 +398,11 @@ li.f_menu_about{
 }
 
 .sbcontent .backlink {
-    font-size: 0.75em;
-    text-align: left
+    position: absolute;
+    top: 0;
+    right: 30px;
+    font-size: 9px;
+    text-align: left;
 }
 
 .sbcontent .routedescr {
@@ -434,7 +437,9 @@ li.f_menu_about{
 .dllink {
     padding-right: 1ex
 }
-
+.elevationprofileClass{
+    padding-left: 20px;
+}
 #routeselector {
     position: absolute;
     bottom: 60px;
@@ -512,11 +517,23 @@ padding-left:20px;
 .routewin td {padding-left:10px; }
 .routewin table {margin-left:11px; margin-top:14px; margin-bottom:14px;}
 .routewin h1 {background: #4BA014 url(../img/map_hiking.png) no-repeat 8px 6px; padding-bottom: 20px;}
-.routewin  .subtitle {display:none;}
-.sbcontent  #routebacklink {
+.routewin .subtitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #4BA014;
+    width: 35px;
+    height: 25px;
+    padding: 5px 0 0 5px;
+}
+.routewin .subtitle a{
+    display: none;
+}
+.sbcontent #routebacklink {
     position:absolute;
     top: 33px;
     left: 10px;
+    white-space: nowrap;
     color: #fff;
     font-size: 13px;
     font-family: "CabinRegular", Tahoma, sans-serif;

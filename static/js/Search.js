@@ -21,6 +21,17 @@
 
 var searchcount = 0; //query serialisation
 /* Start a new search */
+
+$(function(){
+  console.log($);
+  $('#searchform').submit(function(e){
+    console.log('');
+    searchTerm( $('#searchterminput').val() );
+    e.preventDefault();
+    return false;
+  });
+});
+
 function searchTerm(word) {
     word = $.trim(word);
     if (word != '') {
@@ -40,20 +51,42 @@ function searchTerm(word) {
             surl += '&maxresults=10';
             searchcount++;
             var sid = searchcount;
-            $.get(surl, function (data) {
-                        if (searchcount == sid) {
-                          $('#psearchloader').addClass('invisible');
-                          $('#psearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
-                        }
-                       }
-                   );
+            alert('searchTerm');
+            $.ajax({
+              url: surl,
+              async: true,
+              success: function (data) {
+                alert('searchTerm success');
+                if (searchcount == sid) {
+                  $('#psearchloader').addClass('invisible');
+                  $('#psearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
+                }
+              }
+            });
+            // $.get(surl, function (data) {
+            //             if (searchcount == sid) {
+            //               $('#psearchloader').addClass('invisible');
+            //               $('#psearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
+            //             }
+            //            }
+            //        );
         } else {
             document.location.href = basemapurl + 'relation/' + word;
         }
     }
     
     return false;
-}
+};
+
+// // Prevent page refreshing on mobile devices
+// $(function(){
+//   $('.searchbutton').on('click', function(e){
+//     if (e){
+//       e.preventDefault();
+//       alert('e prevented');
+//     };
+//   });
+// });
 
 /* (re)initiate route search
    Also called when 'more results' is clicked.

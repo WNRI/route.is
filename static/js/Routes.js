@@ -306,14 +306,14 @@ function unhighlightRoute(osmid) {
 // XXX should that be here?
 
 function closeSidebar() {
-    routeLayer.removeAllFeatures();
     $('.sidebar').addClass('invisible');
     $('.sidebarsel').removeClass('invisible');
+    routeLayer.removeAllFeatures();
 }
 
-// console.log($);
-// $('.close_sidebar').click(function(e){
-//     alert('test');
-//     e.preventDefault();
-//     closeSidebar();
-// });
+$(function(){
+    $('.close_sidebar').click(function(e){
+        closeSidebar();
+        e.preventDefault();
+    });
+});

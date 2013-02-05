@@ -42,8 +42,8 @@
 
 .olMap .olControlZoom {
     top: auto;
-    bottom: 80px;
-    left: 4px;
+    bottom: 100px;
+    left: 0px;
     font-size: 40px;
     height: 40px;
     width: 40px;
@@ -52,7 +52,7 @@
 }
 
 .olMap .olControlScaleLine {
-    bottom: 12px;
+    bottom: 53px;
     left: 4px;
     font-size: 7px;
 }
