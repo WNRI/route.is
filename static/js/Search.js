@@ -51,12 +51,12 @@ function searchTerm(word) {
             surl += '&maxresults=10';
             searchcount++;
             var sid = searchcount;
-            alert('searchTerm');
+            //alert('searchTerm');
             $.ajax({
               url: surl,
               async: true,
               success: function (data) {
-                alert('searchTerm success');
+                //alert('searchTerm success');
                 if (searchcount == sid) {
                   $('#psearchloader').addClass('invisible');
                   $('#psearchcontent').html(jQuery("<div>").append(data).find('.mainpage'));
