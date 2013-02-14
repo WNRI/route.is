@@ -344,7 +344,7 @@ transparent: true, "visibility": (hillopacity > 1.0), "permalink" : "hill"
         }, { enableHighAccuracy: true });
 
         //  add class to zoombar for hiding zoomSlider
-        addClass(document.getElementById('OpenLayers.Control.PanZoomBar_5'), 'mobile-zoombar');
+        //addClass(document.getElementById('OpenLayers.Control.PanZoomBar_5'), 'mobile-zoombar');
     }
     //XXX this should go somewhere else
     setupRouteView(map);
