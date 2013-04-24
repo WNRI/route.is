@@ -235,7 +235,7 @@ a:hover {
     padding-top: 10px;
     color: #ccc;
     font-family: "CabinRegular", Tahoma, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: normal;
     list-style: none;
     background: url(../img/divider.png) 0 0 no-repeat;
@@ -244,7 +244,7 @@ a:hover {
     color: #ccc;
 }
 li.f_menu_about{
-    font-size: 13px;
+    font-size: 14px;
     width: 135px;
     text-align: center;
 }
