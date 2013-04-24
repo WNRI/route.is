@@ -1,3 +1,8 @@
+#map_header, #header {
+    direction: ltr;
+} 
+
+
 /***** gloabal settings *****/
 
 body {
@@ -46,16 +51,25 @@ a:hover {
 
 /***** General Header ******/
 
+
 .headline {
     background-repeat: no-repeat;
     background-position: right top;    
-    position: fixed;
+    position: relative;
     left: 0px;
     width: 100%;
     top: 0px;
+    height: 55px;
     margin: 0px;
-    padding: 0px;
-    direction: ltr
+    padding: 0px
+}
+
+.logo{
+    float: left;
+    margin: 0 0 0 47px;
+    width: 117px;
+    height: 92px;
+    background: url(../img/logo.png) 0 0 no-repeat;
 }
 
 .subheadline {
@@ -88,13 +102,68 @@ a:hover {
 /********************** Hovering Drop-Down Box ***********************/
 
 #langchooser {
-    display : inline;
+    float: left;
+    margin: 18px 0 0 23px;
+    height: 22px;
+    width: 88px;
+    background: url(../img/bg_lang.png) 0 0 no-repeat;
 }
 
-#langchooser a {
+.dropdown {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: super;
     font-size: 12px;
     font-weight: bold;
+    z-index: 10
+
 }
+.dropdown .ddtitle {
+    width: 53px;
+    float: left;
+    padding-right: 34px;
+    color: #ccc;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: lowercase;
+    font-weight: normal;
+    cursor: pointer;
+}
+.dropdown:hover .ddtitle {
+    color: #fff;
+}
+.dropdown ul {
+    display: none;
+    position: absolute;
+    padding: 0;
+    top: 5px;
+    width: 14em;
+    background-color: #fff;
+    border: 1px solid #1d3053;
+    max-height: 28em;
+    overflow-y: scroll;
+}
+.dropdown ul li {
+    display: block;
+    padding: .25ex .5em;
+    color: #999;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+}
+.dropdown ul li a {
+    display: block;
+    color: #1d3053;
+    text-decoration: none;
+}
+.dropdown ul li a:hover {
+    color: #fff;
+    background-color: #549215;
+
+}
+
 
 /******* Main map *******/
 

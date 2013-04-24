@@ -1,3 +1,10 @@
+#map_header{
+	height: 56px;
+	background: transparent url(../img/bg_header.png) 0 0 repeat-x;
+}
+
+
+
 .header { 
     background-color: #81AA4B;
     color: #000
