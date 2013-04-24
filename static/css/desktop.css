@@ -81,9 +81,10 @@
 }
 
 .olMap .olControlPanZoomBar {
-    margin-top: 80px;
-    margin-left: 0
+    margin-top: 130px;
+    margin-left: 43px;
 }
+
 
 .olMap .olControlScaleLine {
     bottom: 59px;
@@ -99,6 +100,47 @@
     line-height: 40px;
     background: none;
 }
+
+/*********************** Stylizing zoombar controls ****************************/
+/* we need to use !important to overlap styles in style="" 
+*  attribute that are generating by javascript
+*/
+.zoomIn,
+.zoomInImg,
+.zoomOut,
+.zoomOutImg{
+    width: 28px !important;
+    height: 28px !important;
+    background-repeat: no-repeat !important;
+}
+.zoomOut{
+    top: 207px !important;
+}
+.zoomBar,
+.zoomSlider,
+.zoomSliderImg{
+    width: 28px !important;
+    background-repeat: no-repeat !important;
+}
+.zoomBar{
+    height: 175px !important;
+    top: 32px !important;
+    left: 5px !important;
+    background-position: 0 -1px !important;
+}
+.zoomSlider{
+    margin-top: 9px !important;
+    height: 13px !important;
+    left: 4px !important;
+}
+.mobile-zoombar .zoomBar,
+.mobile-zoombar .zoomSlider{
+    display: none !important;
+}
+.mobile-zoombar .zoomOut{
+    top: 31px !important;
+}
+
 
 
 
