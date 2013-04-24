@@ -1,17 +1,14 @@
+.header { 
+    color: #303030
+}
 #map_header{
 	height: 56px;
 	background: transparent url(../img/bg_header.png) 0 0 repeat-x;
 }
-
-
-
-.header { 
-    background-color: #81AA4B;
-    color: #000
-}
-
-.header :link, .header :visited {
-    color: #000;
+#map_footer{
+	height: 51px;
+	background: transparent url(../img/bg_footer.png) 0 0 repeat-x;
+    font-weight: bold;
 }
 
 .subheader {
@@ -19,6 +16,11 @@
     color: #dbfbb1
 }
 
-.subheader :link, .subheader :visited {
-    color: #fcd76d;
+:link {
+    color: #00a
 }
+
+:visited {
+    color: #00a;
+}
+
