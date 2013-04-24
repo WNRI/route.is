@@ -1,5 +1,7 @@
 {% load i18n %}
 {% load assets %}
+{% load markup %}
+{% load markup_filter %}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
@@ -40,10 +42,28 @@
     <div id="page-subheader" class="subheader subheadline">
       {% block header-content %}{% endblock %}
     </div-->
+        
+        <div id="map_footer" class="header footline">
+            {% include "snippets/searchbox.html" %}
+            <div id="map_right_footer" class="absright">
+                <ul class="footer_menu">
+                    <li class="f_menu_about">
+                        <a href="{% url helppage 'about' %}">{% trans "About this map" %}</a>
+                    </li>
+                    <li class="f_menu_update">
+                        {% trans "Last update" %}: {{updatetime}}
+                    </li>
+                    <li class="f_menu_info">
+                        {% trans "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"|markdown|filterpara  %}, {% trans "hillshading by [Hike & Bike Map](http://hikebikemap.de)"|markdown|filterpara %}
+                    </li>
+                </ul>
+          
+            </div>
+        </div>    
 
-    <div id="page-footer" class="header footline">
+    <!--div id="page-footer" class="header footline">
       {% block footer-content %}{% endblock %}
-    </div>
+    </div-->
 
     {% block content %}{% endblock %}
     {% block js %}{% endblock %}
