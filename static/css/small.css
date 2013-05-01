@@ -88,6 +88,12 @@ display:none
     }
 }
 
+.logo{
+    margin-top: -4px;
+    margin-left: 0px;
+}
+
+
 /*********************** language chooser ****************************/
 
 #langchooser {
