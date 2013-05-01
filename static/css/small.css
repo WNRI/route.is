@@ -106,9 +106,7 @@
 /*********************** language chooser ****************************/
 
 #langchooser {
-    position : absolute;
-    top : 2px;
-    right : 2px;
+    display: none;
 }
 
 .dropdown ul {
