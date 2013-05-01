@@ -7,6 +7,9 @@ Side bar elements (currently includes route window and search)
 {% load i18n %}
 {% load lang_filter %}
 
+<div id="routeselector"><a class="sidebarsel" href="javascript:openRouteView()">
+    {% trans "Routes" %}</a></div>
+
   <div id="sidebar-header" class="sidebar ui-header ui-bar-c ui-shadow invisible">
    <a id="sbback" class="ui-btn ui-btn-icon-notext ui-btn-up-c ui-btn-left infobtn" href="#"><span class="ui-btn-inner"><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
    <h1 id="sbtitle" class="ui-title">
