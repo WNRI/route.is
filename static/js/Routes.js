@@ -62,10 +62,10 @@ function loadRoutes() {
     var resolution = map.getResolution();
     var topHeader = ($('#page-header').height() + $('page-subheader').height() + 20)*resolution;
     var maxY = bounds.top - topHeader;
-    //var footer = $('#map-footer')[0];
+    var footer = $('#map_footer')[0];
     var bottomFooter = 0;
-    if (1631 > 0) {
-        bottomFooter = (41 + 20)*resolution;
+    if (footer.offsetWidth > 0) {
+        bottomFooter = (footer.offsetHeight + 20)*resolution;
     }
     var minY = bounds.bottom + bottomFooter;
     bounds = new OpenLayers.Bounds(bounds.left, minY, bounds.right, maxY);        
