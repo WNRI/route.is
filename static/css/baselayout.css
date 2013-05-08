@@ -219,14 +219,6 @@ li.f_menu_about{
     background: url(../img/npp_large.png) 0 0 no-repeat;
 }
 
-#eulogo {
-    display: none;
-    float: right;
-    margin: 7px 0 0 0px;
-    height: 45px;
-    width: 88px;
-    background: url(../img/eu.png) 0 0 no-repeat;
-}
 
 #tg4nplogo {
     float: right;

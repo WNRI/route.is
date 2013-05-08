@@ -25,15 +25,15 @@
 }
 
 @media screen and (max-width: 454px){ 
-    #tg4nplogo {
+    #npplogo {
         display: none;
+    }
+    #tg4nplogo {
+        float:right;
     }
 }
 
 @media screen and (max-width: 400px){ 
-    #eulogo {
-        display: none;
-    }
     #npplogo {
         display: none;
     }
