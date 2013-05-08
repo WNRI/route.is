@@ -211,6 +211,30 @@ li.f_menu_about{
     background: url(../img/bg_lang.png) 0 0 no-repeat;
 }
 
+#npplogo {
+    float: right;
+    margin: 10px 0 0 0px;
+    height: 45px;
+    width: 58px;
+    background: url(../img/npp.png) 0 0 no-repeat;
+}
+
+#eulogo {
+    float: right;
+    margin: 7px 0 0 0px;
+    height: 45px;
+    width: 88px;
+    background: url(../img/eu.png) 0 0 no-repeat;
+}
+
+#tg4nplogo {
+    float: right;
+    margin: 9px 0 0 23px;
+    height: 45px;
+    width: 68px;
+    background: url(../img/tg4np.png) 0 0 no-repeat;
+}
+
 .dropdown {
     position: relative;
     margin: 0px;

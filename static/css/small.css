@@ -17,6 +17,29 @@
     direction: ltr
 }
 
+
+@media screen and (max-width: 395px){ 
+    #tg4nplogo {
+        display: none;
+    }
+    #npplogo {
+        width: 40px;
+    }
+    #eulogo {
+        width: 75px;
+    }
+}
+
+@media screen and (max-width: 245px){ 
+    #eulogo {
+        display: none;
+    }
+    #npplogo {
+        display: none;
+    }
+}
+
+
 /**** Map layout ****/
 
 .mapSwtich {
