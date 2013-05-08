@@ -60,8 +60,8 @@
 }
 
 .olMap .olControlScaleLine {
-    bottom: 4.2em;
-    font-size: 0.6em
+    bottom: 59px;
+    font-size: 0.4em
 }
 
 .olMap .olControlZoom {
@@ -113,9 +113,10 @@
 
 @media (orientation:portrait) {
     .olMap .olControlScaleLine {
-        bottom: 4.1em;
-        font-size: 0.6em
+        bottom: 59px;
+        font-size: 0.4em
     }
+
 
     #attribution {
         bottom: 4.1em
@@ -125,9 +126,10 @@
 
 @media (orientation:landscape) {
     .olMap .olControlScaleLine {
-       bottom: 0px;
-       left: 40px
+        bottom: 59px;
+        font-size: 0.4em
     }
+   
 
     #attribution {
         bottom: 2px
