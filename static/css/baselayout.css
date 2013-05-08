@@ -551,6 +551,27 @@ li.f_menu_about{
     color: #fff;
 }
 
+#geolocation {
+    position: absolute;
+    bottom: 60px;
+    right: 87px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "CabinRegular";
+    text-align: center;
+    background: url(../img/icon_geolocate.png) 0 0 no-repeat;
+    background-size:50px 50px;
+}
+
+#geolocation a{
+    display: block;
+    padding-top: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
 
 /**** elevation profile *****/
 
@@ -619,6 +640,7 @@ li.f_menu_about{
     #langchooser {float:right; margin-right:10px;}
     #searchform {margin-left:10px;}
     #routeselector {background: url("../img/icon_routes_m.png") no-repeat scroll 0 0 transparent; bottom:0px; right:10px;}
+    #geolocation {right: 10px;}
     .footer_menu {display:none;}
 }
 @media screen and (max-width: 980px){
