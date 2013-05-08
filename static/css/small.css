@@ -20,6 +20,12 @@
 
 @media screen and (max-width: 490px){ 
     #tg4nplogo {
+        float:left;
+    }
+}
+
+@media screen and (max-width: 454px){ 
+    #tg4nplogo {
         display: none;
     }
 }
