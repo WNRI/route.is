@@ -134,6 +134,11 @@ function showRouteInfo(osmid, backfunc) {
                 $('#empty-title').html(div.find('.route-info-header').html());
                 $('#empty-title').removeClass('invisible');
                 $('#routeinfocontent').html(div.find('.route-info-content'));
+                
+                // Reset header to name of relation
+                var tmp = $('.route-info-title').html();
+                $('#empty-title').html(tmp);
+                
                 // manipulate headers to make them closable
                 $('#routeinfocontent h2').each(function (idx) {
                     var oldcontent = $(this).html();
