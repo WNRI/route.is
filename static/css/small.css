@@ -42,19 +42,33 @@
 }
 
 .olMap .olControlZoom {
-    top: 50px;
-    left: 4px;
+    top: auto;
+    bottom: 100px;
+    left: 0px;
     font-size: 40px;
     height: 40px;
     width: 40px;
     line-height: 40px;
-    background: none
+    background: none;
 }
+
+.olControlZoomIn,
+.olControlZoomOut{
+    border-radius: 3px !important;
+    background-color: #469000 !important;
+    padding-top: 5px !important;
+    height: 23px !important;
+    width: 28px !important;
+}
+
 
 
 .olMap .olControlScaleLine {
     font-size: 0.6em
 }
+
+
+
 
 #attribution {
     position:absolute;
