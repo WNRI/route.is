@@ -1,17 +1,52 @@
-{% extends "base.html" %}
 {% load i18n %}
 {% load markup %}
 
-{% block bodyattr %}class="docpage-body"{% endblock %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="{% trans mapdescription %}" />
+    <meta name="keywords" lang="en" content="Waymarked Trails, OpenStreetMap, hiking, skating, cycling, mtb" />
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}/img/{{ iconimg }}" />
+    <title>{{title}} – route.is</title>
 
-{% block header-content %}
-   <a href="{% url simplemap %}">{% trans "Back to map" %}</a>
-{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/baselayout.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/standard.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/rest.css">
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/hiking_theme.css">
+    <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery-1.6.4.min.js"></script>
+</head>
 
-{% block content %}
-    {% include "snippets/docmenu.html" %}
-    <div class="docpage">
-        <h1>{{title}}</h1>    
-        {{content|markdown}}
+
+<body{% if LANGUAGE_BIDI %} dir="rtl"{% endif %} class="docpage">
+
+    
+    <div id="map_header" class="header headline">
+        <h1><a href="/" title="route.is" class="logo"></a></h1>
+        {% include "snippets/langchooser.html"%}
     </div>
-{% endblock %}
+
+    <div class="docpage-wrapper">
+        <div id="menubar">
+            <a class="menu back-btn" href="{% url simplemap %}">{% trans "Back to map" %}</a>
+            <ul class="sidemenu">
+                {% for item in menu %}
+                {% ifequal item 'SUBMENU' %}<ul>
+                {% else %}{% ifequal item '/SUBMENU' %}</ul>
+            {% else %}<li><a href="{% url helppage item.0 %}">{{item.1}}</a></li>
+                {% endifequal %}{% endifequal %}
+                {% endfor %}
+            </ul>
+			<span class="responsive-menu">Menu</span>
+        </div>
+
+        <div id="mainpage">
+            <h1>{{title}}</h1>    
+            <div class="rest">{{content|markdown}}</div>
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
