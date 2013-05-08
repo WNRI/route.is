@@ -18,19 +18,13 @@
 }
 
 
-@media screen and (max-width: 395px){ 
+@media screen and (max-width: 490px){ 
     #tg4nplogo {
         display: none;
     }
-    #npplogo {
-        width: 40px;
-    }
-    #eulogo {
-        width: 75px;
-    }
 }
 
-@media screen and (max-width: 245px){ 
+@media screen and (max-width: 400px){ 
     #eulogo {
         display: none;
     }

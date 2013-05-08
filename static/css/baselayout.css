@@ -213,13 +213,14 @@ li.f_menu_about{
 
 #npplogo {
     float: right;
-    margin: 10px 0 0 0px;
+    margin: 6px 0 0 0px;
     height: 45px;
-    width: 58px;
-    background: url(../img/npp.png) 0 0 no-repeat;
+    width: 270px;
+    background: url(../img/npp_large.png) 0 0 no-repeat;
 }
 
 #eulogo {
+    display: none;
     float: right;
     margin: 7px 0 0 0px;
     height: 45px;
