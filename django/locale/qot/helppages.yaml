@@ -1,7 +1,7 @@
 about:
     title: About the map
     hiking: |
-        This map shows sign-posted hiking routes around the world.
+        This map shows sign-posted hiking routes in Norway.
     cycling: |
         This map shows sign-posted cycling routes around the world.
     mtb: |
@@ -9,7 +9,7 @@ about:
     skating: |
         This map shows sign-posted skating routes around the world.
     osm: |
-        The routes are overlayed on the standard OpenStreetMap and optionally a hillshading layer. The route map is generated based
+        The routes are overlayed on a Norwegian Ordnance Survey map, [© Kartverket](http://kartverket.no). The route map is generated based
         on data from the [OpenStreetMap](http://www.openstreetmap.org) (OSM)
         project. OSM is a freely editable world map where anybody can
         participate. Which means that it is by no means complete,
@@ -228,6 +228,9 @@ elevationprofiles:
 technical:
     title: Technical details
     general: |
+        This service is based on the [Waymarked Trails](http://waymarkedtrails.org) service, which provides a service for the whole world.
+        Waymarked Trails is free software [available on Github](https://github.com/lonvia/waymarked-trails-site). The source code with modifications for route.is is also [available on Github](https://github.com/WNRI/route.is).
+        
         The route overlay is updated minutely and is normally 10-15 minutes behind the
         OSM server. The date in the upper left corner shows
         the last update. Updates of the underlying Mapnik map are not within this
@@ -274,18 +277,20 @@ legal:
         Nature can be as ruthless as it is beautiful.
 
         This site contains links to external websites. The author of this site has no influence on
-        the content of these websites and does not take any responsibility for it.
+        the content of these websites and does not take any responsibility for them.
 acknowledgements:
     title: Acknowledgements
     text: |
-        All map data provided by [OpenStreetMap and contributors](http://www.openstreetmap.org)
-        and is distributed under the ODbL license. The base map is also courtesy of OSM and available
-        under CC BY-SA 2.0. For more information, see the
-        [OSM copyright page](http://www.openstreetmap.org/copyright).
+        Route.is was developed as part of the [TG4NP project](http://tg4np.eu); a [Northern Periphery Programme](http://www.northernperiphery.eu/en/home/) project of the European Regional Development Fund.
+        Development was headed by the [Western Norway Research Institute](http://www.vestforsk.no).
+        
+        Backgrounc map © [Kartverket](http://kartverket.no).
+                
+        All route data provided by [OpenStreetMap and contributors](http://www.openstreetmap.org)
+        and is distributed under the ODbL license.
 
-        Hillshading and elevation data created from a mash-up of SRTM and ASTER GDEM data.
+        Elevation data created from a mash-up of SRTM and ASTER GDEM data.
         ASTER GDEM is a product of METI and NASA.
-        Postprocessing was kindly provided by Yves Cainaud from [pistes-nordiques.org](http://www.pistes-nordiques.org).
 
         The elevation profile code has been developed by Espen Oldeman Lund in a cooperation between [Kresendo](http://www.kresendo.no) and the [TG4NP project](http://tg4np.eu) at the [Western Norway Research Institute](http://wwww.vestforsk.no).
 
@@ -297,13 +302,7 @@ acknowledgements:
         [Guttorm Flatabø](http://guttormflatabo.com)/[TG4NP](http://tg4np.eu) (Norwegian bokmål and nynorsk),
         Mads Lumholt/TG4NP (Danish), Magnús Smári Snorrason/TG4NP (Islandic),
         Lars Mikaelsson/TG4NP (Swedish), and Elina Pesonen (Finnish).
-
-        Finally, the server would not exist without the generous support of
-        [Martin Hoffmann](http://www.partim.de).
 contact:
     title: Contact
     text: |
-        Questions and comments about this site can be sent to: [lonvia@denofr.de](mailto:lonvia@denofr.de).
-
-        Bugs can also be reported on [the project's issue tracker on github](https://github.com/lonvia/waymarked-trails-site/issues). Before reporting a bug, please make sure that your problem is
-        not with the OSM data.
+        Questions and comments about this site can be sent to: [webmaster@route.is](mailto:webmaster@route.is).
