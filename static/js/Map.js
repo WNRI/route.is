@@ -335,7 +335,6 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         map.addLayer(geoLocateLayer);
     }
     
-    
     // Show data warning
     if (ismobile) { 
         if (Modernizr.localstorage) {
