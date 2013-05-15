@@ -102,13 +102,13 @@
 {% if ismobile %}
     <div id="geolocationErrorMsg">{% trans "Unable to get your location!" %}</div>
     <div id="dataWarning">
-          <p>{% trans "Vi kan verken garantere at kartet er presist eller komplett. Ta med deg et skikkelig papirkart, skikkelig turutstyr og husk sunn fornuft før du går på tur. Naturen kan være like hensynsløs som den er vakker. Vi lenker til andre nettsteder. Vi har ingen direkte innvirkning på disse nettstedene og kan ikke stå til ansvar for innholdet på de." %}
+          <p>{% trans "This site uses data from the crowdsourced project OpenStreetMap. Neither correctness nor completeness can be guaranteed. If you go out for a hike, get a decent paper map, appropriate gear and don't leave your common sense at home." %}
           </p>
           
           <p id="buttonArea">
-            <a class="button" href="javascript:void(0)" onClick="closeDataWarning();">{% trans "Try the map! " %} </a>
+            <a class="button" href="javascript:void(0)" onClick="closeDataWarning();">{% trans "OK!" %} </a>
             <span id="trymaplink">
-                {% trans "Do not remind me: " %} <input id="dataWarningCheckbox" type="checkbox" checked onClick="setDataWarningFutureVisibility();">    
+                {% trans "Do not remind me:" %} <input id="dataWarningCheckbox" type="checkbox" checked onClick="setDataWarningFutureVisibility();">    
             </span>
           </p>
     </div>
