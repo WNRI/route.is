@@ -335,6 +335,18 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
         map.addLayer(geoLocateLayer);
     }
     
+    
+    // Show data warning
+    if (ismobile) { 
+        if (Modernizr.localstorage) {
+            // If first time visit or user has decided to show warning message again
+            if(localStorage.getItem("dataWarning") == "1" || localStorage.getItem("dataWarning") == null ) {
+                jQuery.facybox({ div: '#dataWarning' }); // Open warning message
+            }
+            localStorage.setItem("dataWarning", "0"); // Default do not show warning next time
+        }
+    }
+    
     // Locate before moveend event due to race condition
     // updateLocation is manually called if location is found
     if (ismobile && showroute <= 0) {
@@ -463,13 +475,13 @@ function addZoombarClasses(){
         zoomSlider = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8');
         zoomSliderImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8_innerImage');
 
-    addClass(zoomIn, 'zoomIn');
-    addClass(zoomInImg, 'zoomInImg');
-    addClass(zoomOut, 'zoomOut');
-    addClass(zoomOutImg, 'zoomOutImg');
-    addClass(zoomBar, 'zoomBar');
-    addClass(zoomSlider, 'zoomSlider');
-    addClass(zoomSliderImg, 'zoomSliderImg');
+    //addClass(zoomIn, 'zoomIn');
+    //addClass(zoomInImg, 'zoomInImg');
+    //addClass(zoomOut, 'zoomOut');
+    //addClass(zoomOutImg, 'zoomOutImg');
+    //addClass(zoomBar, 'zoomBar');
+    //addClass(zoomSlider, 'zoomSlider');
+    //addClass(zoomSliderImg, 'zoomSliderImg');
 };
 
 function addClass(o, c){
@@ -481,6 +493,28 @@ function addClass(o, c){
 function removeClass(o, c){
     var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g")
     o.className = o.className.replace(re, "$1").replace(/\s+/g, " ").replace(/(^ | $)/g, "")
+}
+
+// Close data warning box programatically
+function closeDataWarning() {
+    $.facybox.close(); 
+}
+
+// Check if checkbox is unchecked by user.
+// If so make sure warning message is shown next time as well. 
+function setDataWarningFutureVisibility() {
+    var stickyWarning = true;
+    $("input[type='checkbox']").each( 
+        function() { 
+            if(stickyWarning) {
+                stickyWarning = $(this).prop('checked');
+            }
+        } 
+    );
+    if(!stickyWarning) {
+        // Set localstorage
+        localStorage.setItem("dataWarning", "1");
+    }
 }
 
 
