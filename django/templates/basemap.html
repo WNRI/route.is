@@ -6,16 +6,18 @@
 
 {% block js %}
 
-	{% if ismobile %}
-        <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/modernizr-120227.js"></script>
-    	<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-mobile-130424.js"></script>
-	{% else %}
-		<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-130424.js"></script>
-	{% endif %}
-
     <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/slider-min.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/noty-4d8bc69.js"></script>
+
+	{% if ismobile %}
+        <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/modernizr-120227.js"></script>
+    	<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-mobile-130424.js"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}/contrib/facybox.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/contrib/facybox.css" />
+	{% else %}
+		<script type="text/javascript" src="{{ MEDIA_URL }}/contrib/openlayers-130424.js"></script>
+	{% endif %}
     
     {% if show_elevation_profile %}
     <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}/contrib/flot-flot-f0e78fc.js"></script>
@@ -95,17 +97,21 @@
 
 {% block content %}
     {% url simplemap as baseurl %}
-    <!--div id="map_maplinks">
-      <a class="maplink" href="http://hiking.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_hiking.png" alt="{% trans "Hiking" %}" title="{% trans "Hiking" %}" /></a>
-      <a class="maplink" href="http://cycling.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_cycling.png" alt="{% trans "Cycling" %}" title="{% trans "Cycling" %}" /></a>
-      <a class="maplink" href="http://mtb.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_mtb.png" alt="{% trans "MTB" %}" title="{% trans "MTB" %}" /></a>
-      <a class="maplink" href="http://skating.waymarkedtrails.org{{ baseurl }}"><img src="{{ MEDIA_URL }}/img/map_skating.png" alt="{% trans "Inline Skating" %}" title="{% trans "Inline Skating" %}" /></a>
-    </div-->
 
-    <!--div id="attribution" class="subheader">{% trans "Map data © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"|markdown|filterpara  %}<span class="additional">, {% trans "elevation data by [SRTM/ASTER](help/acknowledgements)"|markdown|filterpara|prefixurl:baseurl %}</span></div-->
 
 {% if ismobile %}
     <div id="geolocationErrorMsg">{% trans "Unable to get your location!" %}</div>
+    <div id="dataWarning">
+          <p>{% trans "Vi kan verken garantere at kartet er presist eller komplett. Ta med deg et skikkelig papirkart, skikkelig turutstyr og husk sunn fornuft før du går på tur. Naturen kan være like hensynsløs som den er vakker. Vi lenker til andre nettsteder. Vi har ingen direkte innvirkning på disse nettstedene og kan ikke stå til ansvar for innholdet på de." %}
+          </p>
+          
+          <p id="buttonArea">
+            <a class="button" href="javascript:void(0)" onClick="closeDataWarning();">{% trans "Try the map! " %} </a>
+            <span id="trymaplink">
+                {% trans "Do not remind me: " %} <input id="dataWarningCheckbox" type="checkbox" checked onClick="setDataWarningFutureVisibility();">    
+            </span>
+          </p>
+    </div>
 {% endif %}
 
     {% include "snippets/sidebar.html" %}
