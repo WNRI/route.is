@@ -375,7 +375,7 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
     }
     
     //  add classes to zoombar to take ability to stylize it
-    addZoombarClasses();
+    addZoombarClasses(ismobile);
 
 
 }
@@ -465,7 +465,7 @@ $('#select-lang').change(function() {
         document.location.href = $('#select-lang option:selected')[0].value + '#pref';
 });
 
-function addZoombarClasses(){
+function addZoombarClasses(ismobile){
     var zoomIn = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomin'),
         zoomInImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomin_innerImage'),
         zoomOut = document.getElementById('OpenLayers.Control.PanZoomBar_5_zoomout'),
@@ -473,14 +473,16 @@ function addZoombarClasses(){
         zoomBar = document.getElementById('OpenLayers_Control_PanZoomBar_ZoombarOpenLayers.Map_8'),
         zoomSlider = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8');
         zoomSliderImg = document.getElementById('OpenLayers.Control.PanZoomBar_5_OpenLayers.Map_8_innerImage');
-
-    //addClass(zoomIn, 'zoomIn');
-    //addClass(zoomInImg, 'zoomInImg');
-    //addClass(zoomOut, 'zoomOut');
-    //addClass(zoomOutImg, 'zoomOutImg');
-    //addClass(zoomBar, 'zoomBar');
-    //addClass(zoomSlider, 'zoomSlider');
-    //addClass(zoomSliderImg, 'zoomSliderImg');
+        
+    if (!ismobile) {
+        addClass(zoomIn, 'zoomIn');
+        addClass(zoomInImg, 'zoomInImg');
+        addClass(zoomOut, 'zoomOut');
+        addClass(zoomOutImg, 'zoomOutImg');
+        addClass(zoomBar, 'zoomBar');
+        addClass(zoomSlider, 'zoomSlider');
+        addClass(zoomSliderImg, 'zoomSliderImg');
+    }
 };
 
 function addClass(o, c){
