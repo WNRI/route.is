@@ -35,7 +35,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
     else:
         cookie = None
 
-    extent = (693000, 5764000, 1150000, 6062100) 
+    extent = (607717, 8480327, 989407, 8979650) 
     firstVisit = 1
     showroute = -1
     if relid is not None:
