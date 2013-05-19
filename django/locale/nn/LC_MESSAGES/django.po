@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Waymarked Trails Website\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-15 12:40+0200\n"
+"POT-Creation-Date: 2013-05-19 23:43+0200\n"
 "PO-Revision-Date: 2013-03-04 10:33:04+0000\n"
 "Last-Translator: Guttorm Flatabø <post@guttormflatabo.com>\n"
 "Language: nn\n"
@@ -151,26 +151,22 @@ msgstr "Intern tenarfeil"
 msgid "Something very unexpected just happend on the server. Please, file a bug report and don't forget to describe in detail what you did to see this error."
 msgstr "Noko veldig uføresett skjedde nettopp på tenaren. Me set stor pris på om du sender oss ei feilmelding der du skildrar i detalj kva du gjorde før du kom til denne feilmeldinga."
 
-#: templates/base.html:40 templates/snippets/langchooser.html:10
+#: templates/base.html:39 templates/snippets/langchooser.html:10
 msgid "Choose language..."
 msgstr "Velj språk"
 
-#: templates/base.html:51
+#: templates/base.html:50
 msgid "About this map"
 msgstr ""
 
-#: templates/base.html:54 templates/snippets/update.html:7
+#: templates/base.html:53 templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Sist oppdatert"
 
-#: templates/base.html:57
+#: templates/base.html:56
 #, fuzzy
-msgid "Map data by [OpenStreetMap](http://www.openstreetmap.org) and contributors ([CC BY-SA](http://creativecommons.org/licenses/by-sa/2.0/))"
+msgid "Background map © [Kartverket](http://kartverket.no/), route info © [OpenStreetMap under ODbL](http://www.openstreetmap.org/copyright)"
 msgstr "Kartdata © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
-
-#: templates/base.html:57
-msgid "hillshading by [Hike & Bike Map](http://hikebikemap.de)"
-msgstr ""
 
 #: templates/basemap.html:63
 msgid "JavaScript needs to be activated to use this service."
