@@ -69,7 +69,7 @@ function loadRoutes() {
     }
     var minY = bounds.bottom + bottomFooter;
     bounds = new OpenLayers.Bounds(bounds.left, minY, bounds.right, maxY);        
-    
+
     bounds.transform(map.projection, map.displayProjection);
     $("#sb-routes .route-content").addClass("invisible");
     $("#sidebar-header .infobtn").addClass("invisible");
@@ -84,6 +84,44 @@ function loadRoutes() {
                     $('#empty-title').html(div.find('.route-list-header').html());
                     $('#empty-title').removeClass('invisible');
                     $('#routecontent').html(div.find('.route-list-content'));
+                    
+                    // Get all <td>'s from data and get route id
+                    // .routeDist only exist on mobile
+                    $.each($('.routeDist'), function(index, value) {
+                        
+                        var routeid = value.id;     
+                        
+                        var options = {enableHighAccuracy:true, maximumAge:0, timeout:7000};
+                        navigator.geolocation.getCurrentPosition(function(position){
+                            // Calc min distance from user to end/start point with this route id
+                            $.getJSON(routeinfo_baseurl + routeid + '/dist?' + 'lat=' + position.coords.latitude + '&lon=' + position.coords.longitude, function(data) {
+                                if (data.minDistance !== null) {
+                                    
+                                    // Set distance in <td>
+                                    if(data.minDistance>999) {
+                                        var length = Math.round(data.minDistance/1000) + " km";
+                                    }
+                                    else if(data.minDistance<1000)  {
+                                        var length = data.minDistance + " m"
+                                    }
+                                    else {
+                                        var length = ""; // Not able to get min distance
+                                    }
+                                    $('#' + routeid).html(length);
+                                }
+                                else {
+                                    var length = ""; // Not able to get min distance
+                                    $('#' + routeid).html(length);   
+                                }
+                            });
+                        },
+                        function(){
+                            // Handle error
+                            $('#' + routeid).html(""); // Not able to get min distance
+                        }, options
+                        );                   
+                     });
+
                     $('#routecontent').removeClass("invisible");
                     var link = div.find('.routelink').attr('href');
                     var styleloader = new OpenLayers.Protocol.HTTP({

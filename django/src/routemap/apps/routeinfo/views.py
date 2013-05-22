@@ -22,6 +22,9 @@ from django.conf import settings
 from django.views.generic.simple import direct_to_template
 from django.template.defaultfilters import slugify
 
+from django.contrib.gis.gdal import SpatialReference, CoordTransform
+from django.contrib.gis.geos import Point
+
 import django.contrib.gis.geos as geos
 import urllib2
 import json as jsonlib
@@ -237,6 +240,48 @@ def json(request, route_id=None):
         rel.geom = rel.geom.simplify(5.0)
     #print rel.geom.num_coords
     return HttpResponse(rel.geom.json, content_type="text/json")
+    
+# get distance from user point to relation    
+def dist(request, route_id=None):
+    try:
+        rel = getattr(table_module, table_class).objects.get(id=route_id)
+    except:
+        return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
+    
+    
+    try:
+        lat = request.GET.get('lat', '')
+        lon = request.GET.get('lon', '')
+        userPoint = Point(float(lon), float(lat), srid=4326)
+        
+        # Get start/end point
+        startPoint = Point(rel.geom[0][0], rel.geom[0][1], srid=900913)
+        endPoint = Point(rel.geom[-1][0], rel.geom[-1][1], srid=900913)
+    
+        # Coordinate systems
+        sphericalCoord = SpatialReference(900913)
+        geographicCoord = SpatialReference(4326)
+        targetCoord = SpatialReference(32633)
+    
+        # Transformations
+        sphericalTrans = CoordTransform(sphericalCoord, targetCoord)
+        geographicTranc = CoordTransform(geographicCoord, targetCoord)
+    
+        # Transform coordinates
+        startPoint.transform(sphericalTrans)
+        userPoint.transform(geographicTranc)
+    
+        # Distance to start/end point
+        distStartPoint = startPoint.distance(userPoint)
+        distEndPoint = endPoint.distance(userPoint)
+    
+    
+        response_data={'route_id': route_id, 'minDistance': round(min(distStartPoint, distEndPoint), 0)}
+    except:
+        response_data={'route_id': route_id, 'minDistance': 'unknown' }
+    
+    
+    return HttpResponse(jsonlib.dumps(response_data), content_type="text/json")
 
 def json_box(request):
     try:
@@ -315,9 +360,14 @@ def list(request):
         osmids.append(str(rel.id))
         numobj += 1
 
+    if request.flavour == 'mobile':
+        ismobile = True
+    else:
+        ismobile = False
     return direct_to_template(request,
             'routes/list.html', 
              {'objs' : objs,
+              'ismobile': ismobile,
               'osmids' : ','.join(osmids),
               'hasmore' : numobj == settings.ROUTEMAP_MAX_ROUTES_IN_LIST,
               'symbolpath' : settings.ROUTEMAP_COMPILED_SYMBOL_PATH,
