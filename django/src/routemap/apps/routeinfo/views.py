@@ -248,39 +248,62 @@ def dist(request, route_id=None):
     except:
         return direct_to_template(request, 'routes/info_error.html', {'id' : route_id})
     
+    # Coordinate systems
+    sphericalCoord = SpatialReference(900913)
+    geographicCoord = SpatialReference(4326)
+    targetCoord = SpatialReference(32633)
+
+    # Transformations
+    sphericalTrans = CoordTransform(sphericalCoord, targetCoord)
+    geographicTranc = CoordTransform(geographicCoord, targetCoord)
+    
     
     try:
         lat = request.GET.get('lat', '')
         lon = request.GET.get('lon', '')
         userPoint = Point(float(lon), float(lat), srid=4326)
-        
-        # Get start/end point
-        startPoint = Point(rel.geom[0][0], rel.geom[0][1], srid=900913)
-        endPoint = Point(rel.geom[-1][0], rel.geom[-1][1], srid=900913)
-    
-        # Coordinate systems
-        sphericalCoord = SpatialReference(900913)
-        geographicCoord = SpatialReference(4326)
-        targetCoord = SpatialReference(32633)
-    
-        # Transformations
-        sphericalTrans = CoordTransform(sphericalCoord, targetCoord)
-        geographicTranc = CoordTransform(geographicCoord, targetCoord)
-    
-        # Transform coordinates
-        startPoint.transform(sphericalTrans)
         userPoint.transform(geographicTranc)
+
+
+        # Check for multilinestring
+        if type(rel.geom[0][0]) is tuple:
     
-        # Distance to start/end point
-        distStartPoint = startPoint.distance(userPoint)
-        distEndPoint = endPoint.distance(userPoint)
+            distStartPoint = float('inf')
+            distEndPoint = float('inf')
     
-    
+            for linestring in rel.geom:
+                # Get start/end point
+                startPoint = Point(linestring[0][0], linestring[0][1], srid=900913)
+                endPoint = Point(linestring[-1][0], linestring[-1][1], srid=900913)
+
+                # Transform coordinates
+                startPoint.transform(sphericalTrans)
+
+                # Distance to start/end point
+                tmpDistStartPoint = startPoint.distance(userPoint)
+                if tmpDistStartPoint<distStartPoint:
+                    distStartPoint = tmpDistStartPoint
+        
+                tmpDistEndPoint = endPoint.distance(userPoint)
+                if tmpDistStartPoint<distEndPoint:
+                    distEndPoint = tmpDistEndPoint
+        
+        else:
+            # Get start/end point
+            startPoint = Point(rel.geom[0][0], rel.geom[0][1], srid=900913)
+            endPoint = Point(rel.geom[-1][0], rel.geom[-1][1], srid=900913)
+
+            # Transform coordinates
+            startPoint.transform(sphericalTrans)
+
+            # Distance to start/end point
+            distStartPoint = startPoint.distance(userPoint)
+            distEndPoint = endPoint.distance(userPoint)
+        
         response_data={'route_id': route_id, 'minDistance': round(min(distStartPoint, distEndPoint), 0)}
     except:
-        response_data={'route_id': route_id, 'minDistance': 'unknown' }
-    
-    
+        response_data={'route_id': route_id, 'minDistance': 'unknown'}
+        
     return HttpResponse(jsonlib.dumps(response_data), content_type="text/json")
 
 def json_box(request):
