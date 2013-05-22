@@ -21,6 +21,7 @@ from django.views.generic.simple import direct_to_template
 import urllib2
 import json
 from django.utils.importlib import import_module
+from django.http import HttpResponse
 
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
@@ -82,6 +83,7 @@ def search_place(request, term):
     url = "%s?q=%s&accept-language=%s&format=json" % (settings.ROUTEMAP_NOMINATIM_URL,
                                            urllib2.quote(term.encode('utf8')),
                                            request.LANGUAGE_CODE)
+                                           
     try:
         req = urllib2.Request(url, headers={
                 'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to %s)' % settings.ADMINS[0][1]
@@ -115,3 +117,45 @@ def search_place(request, term):
                       'objs' : objs}
     return direct_to_template(request, 'search/places.html',
                               extra_context)
+
+
+def search_area(request, term):
+    
+    areatypes = ['administrative', 'wood', 'national_park', 'woodland', 'mountain_range']
+
+    url = "%s?q=%s&accept-language=%s&format=json" % (settings.ROUTEMAP_NOMINATIM_URL,
+                                           urllib2.quote(term.encode('utf8')),
+                                           request.LANGUAGE_CODE)
+                                           
+    print request.LANGUAGE_CODE                                 
+    try:
+        req = urllib2.Request(url, headers={
+                'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to %s)' % settings.ADMINS[0][1]
+                })
+        data = urllib2.urlopen(req).read()
+        data = json.loads(data)
+    except:
+        pass
+
+    objs = []
+    for res in data:
+        # sanity checks, never trust an external URL
+        if 'display_name' in res and 'boundingbox' in res:
+            bbox = res['boundingbox']
+            if len(bbox) != 4:
+                continue
+            try:
+                bbox = [float(x) for x in bbox]
+            except:
+                continue
+            
+            type = res.get('type', '')
+            if type in areatypes: 
+                objs.append({
+                    'name' : res['display_name'],
+                    'bbox' : bbox,
+                    'type' : type
+                    })
+                break
+
+    return HttpResponse(json.dumps(objs), content_type="text/json")

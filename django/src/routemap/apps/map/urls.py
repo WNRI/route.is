@@ -20,6 +20,7 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('routemap.apps.map.views',
     url(r'^$', 'route_map_view', name='simplemap'),
     url(r'^(?P<relid>\d+)$', 'route_map_view', name='relationmap'),
-    url(r'^(?P<name>.+)$', 'route_map_view', name='routemap'),
+    url(r'^in/(?P<inarea>.+)$', 'route_map_view', name='areamap'),
+    url(r'^(?P<name>.+)$', 'route_map_view', name='routemap'),  
 )
 

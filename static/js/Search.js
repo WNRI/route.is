@@ -38,6 +38,22 @@ function searchTerm(word) {
     return false;
 }
 
+function searchArea(area) {
+    // nominatim search
+    var surl = areasearchurl + encodeURIComponent(area);
+
+    $.get(surl, function (data) {
+        if (typeof data[0] != "undefined") {
+            zoomMap(data[0].bbox);
+            openRouteView();
+        }
+        else {
+            searchTerm(area);
+        }
+       }
+    );
+}
+
 function searchForWord(word) {
     $('#search-results').removeClass('invisible');
     $('.searchcontent').html('');

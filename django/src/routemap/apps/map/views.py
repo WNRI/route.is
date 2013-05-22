@@ -30,7 +30,7 @@ table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
 
-def route_map_view(request, relid=None, name=None, template='basemap.html'):
+def route_map_view(request, relid=None, name=None, inarea=None, template='basemap.html'):
     if request.COOKIES.has_key('_routemap_location'):
         cookie = request.COOKIES['_routemap_location'].split('|')
     else:
@@ -40,6 +40,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
     firstVisit = 1
     showroute = -1
     showsearch = -1
+    showarea = -1
     if relid is not None:
         try:
             obj = getattr(table_module, table_class).objects.get(id=relid)
@@ -54,6 +55,8 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
             showroute = obj.id
         except:
             showsearch = name
+    elif inarea is not None:
+        showarea = inarea
 
     if showroute == -1:
         # check for a cookie
@@ -65,7 +68,8 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
 
     context = {'minlat' : str(extent[1]), 'maxlat' : str(extent[3]),
                'minlon' : str(extent[0]), 'maxlon' : str(extent[2]),
-               'showroute' : showroute, 'showsearch' : showsearch, 'baseopacity' : '1.0',
+               'showroute' : showroute, 'showsearch' : showsearch, 
+               'showarea' : showarea, 'baseopacity' : '1.0',
                'routeopacity' : '0.8', 'hillopacity' : '0.0',
                'tileurl' : settings.ROUTEMAP_TILE_URL,
                'firstVisit' : firstVisit

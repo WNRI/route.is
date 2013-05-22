@@ -20,5 +20,6 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('routemap.apps.search.views',
     url(r'^place/(?P<term>.*)$', 'search_place', name='place'),
     url(r'^route/(?P<term>.*)$', 'search_route', name='route'),
+    url(r'^area/(?P<term>.*)$', 'search_area', name='area'),
 )
 
