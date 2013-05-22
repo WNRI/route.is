@@ -369,7 +369,11 @@ transparent: true, "visibility": (hillopacity > 0.0), "permalink" : "hill"
             WMTSidebar.show(subhash);
             reloadRoutes();
         }
-    } else {
+    }
+    else if(showsearch != -1) { // Show search panel with search term
+       searchTerm(showsearch); 
+    }
+    else {
         // give focus to map so zooming works
         document.getElementById('map').focus();
     }

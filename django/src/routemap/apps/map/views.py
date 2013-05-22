@@ -29,6 +29,7 @@ from django.utils.importlib import import_module
 table_module, table_class = settings.ROUTEMAP_ROUTE_TABLE.rsplit('.',1)
 table_module = import_module(table_module)
 
+
 def route_map_view(request, relid=None, name=None, template='basemap.html'):
     if request.COOKIES.has_key('_routemap_location'):
         cookie = request.COOKIES['_routemap_location'].split('|')
@@ -38,6 +39,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
     extent = (607717, 8480327, 989407, 8979650) 
     firstVisit = 1
     showroute = -1
+    showsearch = -1
     if relid is not None:
         try:
             obj = getattr(table_module, table_class).objects.get(id=relid)
@@ -51,7 +53,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
             extent = obj.geom.extent
             showroute = obj.id
         except:
-            showroute = 0
+            showsearch = name
 
     if showroute == -1:
         # check for a cookie
@@ -63,7 +65,7 @@ def route_map_view(request, relid=None, name=None, template='basemap.html'):
 
     context = {'minlat' : str(extent[1]), 'maxlat' : str(extent[3]),
                'minlon' : str(extent[0]), 'maxlon' : str(extent[2]),
-               'showroute' : showroute, 'baseopacity' : '1.0',
+               'showroute' : showroute, 'showsearch' : showsearch, 'baseopacity' : '1.0',
                'routeopacity' : '0.8', 'hillopacity' : '0.0',
                'tileurl' : settings.ROUTEMAP_TILE_URL,
                'firstVisit' : firstVisit
