@@ -113,9 +113,8 @@ msgid "Hiking"
 msgstr "Vandreruter"
 
 #: src/routemap/sites/settings/hiking.py:28
-#, fuzzy
 msgid "route.is shows hiking routes from the local to international level in Norway, with maps and information from OpenStreetMap."
-msgstr "Waymarked Trails viser vandreruter fra lokalt til internasjonalt nivå, med kart og informasjon fra OpenStreetMap."
+msgstr "route.is viser vandreruter fra lokalt til internasjonalt nivå på detaljert kart, og med informasjon fra OpenStreetMap."
 
 #. Translators: This is the category of routes for the active map view, will be preceded by site name, such as "Waymarked Trails: ". "MTB" means "mountain bike".
 #: src/routemap/sites/settings/mtbmap.py:28
@@ -157,16 +156,15 @@ msgstr "Velg språk …"
 
 #: templates/base.html:50
 msgid "About this map"
-msgstr ""
+msgstr "Om kartet"
 
 #: templates/base.html:53 templates/snippets/update.html:7
 msgid "Last update"
 msgstr "Sist oppdatert"
 
 #: templates/base.html:56
-#, fuzzy
 msgid "Background map © [Kartverket](http://kartverket.no/), route info © [OpenStreetMap under ODbL](http://www.openstreetmap.org/copyright)"
-msgstr "Kartdata © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
+msgstr "Bakgrunnskart © [Kartverket](http://kartverket.no/), ruteinformasjon © [OpenStreetMap](http://www.openstreetmap.org) under [ODbL](http://www.openstreetmap.org/copyright)"
 
 #: templates/basemap.html:63
 msgid "JavaScript needs to be activated to use this service."
@@ -193,7 +191,7 @@ msgstr ""
 
 #: templates/basemap.html:105
 msgid "This site uses data from the crowdsourced project OpenStreetMap. Neither correctness nor completeness can be guaranteed. If you go out for a hike, get a decent paper map, appropriate gear and don't leave your common sense at home."
-msgstr ""
+msgstr "Denne tenesta nyttegjør brukergenerert data fra OpenStreetMap. Vi kan verken garantere at kartet er presist eller komplett. Ta med deg skikkelig turutstyr og papirkart, og husk sunn fornuft før du går ut på tur. Naturen kan være like hensynsløs som den er vakker."
 
 #: templates/basemap.html:109
 msgid "OK!"
@@ -201,7 +199,7 @@ msgstr ""
 
 #: templates/basemap.html:111
 msgid "Do not remind me:"
-msgstr ""
+msgstr "Ikke påminn meg:"
 
 #: templates/docpage.html:31 templates/osmc_symbols.html:12
 #: templates/routes/error.html:7 templates/routes/info.html:13

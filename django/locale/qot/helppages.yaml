@@ -281,10 +281,10 @@ legal:
 acknowledgements:
     title: Acknowledgements
     text: |
-        Route.is was developed as part of the [TG4NP project](http://tg4np.eu); a [Northern Periphery Programme](http://www.northernperiphery.eu/en/home/) project of the European Regional Development Fund.
-        Development was headed by the [Western Norway Research Institute](http://www.vestforsk.no).
+        Route.is is developed as part of the [TG4NP project](http://tg4np.eu); a [Northern Periphery Programme](http://www.northernperiphery.eu/en/home/)(NPP) project of the European Regional Development Fund.
+        Development is headed by the [Western Norway Research Institute](http://www.vestforsk.no), and funded by NPP, [Kystarven](https://www.facebook.com/pages/Kystarven/130966873586912), and in kind contributions from other partners.
         
-        Backgrounc map © [Kartverket](http://kartverket.no).
+        Background map © [Kartverket](http://kartverket.no).
                 
         All route data provided by [OpenStreetMap and contributors](http://www.openstreetmap.org)
         and is distributed under the ODbL license.
