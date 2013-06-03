@@ -22,6 +22,7 @@ urlpatterns = patterns('routemap.apps.routeinfo.views',
     url(r'^(?P<route_id>\d+)/info$', 'info', name='info'),
     url(r'^(?P<route_id>\d+)/gpx$', 'gpx', name='gpx'),
     url(r'^(?P<route_id>\d+)/json$', 'json', name='json'),
+    url(r'^(?P<route_id>\d+)/dist$', 'dist', name='dist'),
     url(r'^(?P<route_id>\d+)/wikilink$', 'wikilink', name='wikilink'),
     url(r'^jsonbox$', 'json_box', name='jsonbox'),
 )

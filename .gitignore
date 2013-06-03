@@ -6,3 +6,4 @@ static/skatingsyms/*
 *.log
 *.mo
 *.pyc
+*.DS_Store
