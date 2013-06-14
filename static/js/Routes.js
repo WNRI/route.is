@@ -52,6 +52,26 @@ function setupRouteView(m) {
     
 }
 
+/*
+    Utility function to sort the route list according to distance
+*/
+function sortTable(tablename){
+    var tbl = document.getElementById(tablename).tBodies[0];
+    var store = [];
+    for(var i=0, len=tbl.rows.length; i<len; i++){
+        var row = tbl.rows[i];
+        var sortnr = parseFloat(row.cells[0].textContent || row.cells[0].innerText);
+        if(!isNaN(sortnr)) store.push([sortnr, row]);
+    }
+    store.sort(function(x,y){
+        return x[0] - y[0];
+    });
+    for(var i=0, len=store.length; i<len; i++){
+        tbl.appendChild(store[i][1]);
+    }
+    store = null;
+}
+
 
 var routeviewcounter = 0;
 function loadRoutes() {
@@ -101,10 +121,10 @@ function loadRoutes() {
                                     
                                     // Set distance in <td>
                                     if(data.minDistance>999) {
-                                        var length = Math.round(data.minDistance/1000) + " km";
+                                        var length = Math.round(data.minDistance/1000);
                                     }
                                     else if(data.minDistance<1000)  {
-                                        var length = data.minDistance + " m"
+                                        var length = data.minDistance;
                                     }
                                     else {
                                         var length = ""; // Not able to get min distance
@@ -115,6 +135,14 @@ function loadRoutes() {
                                     var length = ""; // Not able to get min distance
                                     $('#' + routeid).html(length);   
                                 }
+
+                                // Sort all tables as distances get ready
+                                // Not the most effective way of doing this, but 
+                                // we are only dealing with small tables
+                                $.each($('.routelist'), function(index, value) { 
+                                    sortTable(value.id);   
+                                });
+                                
                             });
                         },
                         function(){

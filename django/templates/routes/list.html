@@ -15,12 +15,13 @@
 var teller = 0;
 </script>
 <div class="route-list-content">
-<table class="routelist" width=100%>
+
 {% for objlist in objs %}
 {% if objlist.routes %}
+    <table class="routelist" id="{{ objlist.title }}" width=100%>
     <tr>
         {% if ismobile %}
-        <th>{% trans "Avstand" %}</th>
+        <th>{% trans "Km" %}</th>
         {% endif %}
         
         <th colspan="2" align="{% if LANGUAGE_BIDI %}right{% else %}left{% endif %}">{{ objlist.title }} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_{{ objlist.shorttitle }}.png"></th></tr>
@@ -29,7 +30,7 @@ var teller = 0;
     <tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
     
     {% if ismobile %}
-    <td class="routeDist" id="{{route.id}}"></td>
+    <td width="50" class="routeDist" id="{{route.id}}"></td>
     {% endif %}
     
     
@@ -40,11 +41,12 @@ var teller = 0;
     </tr>
    
     {% endfor %}
+    </table>
 {% endif %}
 
 {% endfor %}
 
-</table>
+
 
 {% if hasmore %}
 <p class="routefooter">{% trans "Zoom in to see more routes" %}</p>
