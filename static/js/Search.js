@@ -46,6 +46,8 @@ function searchArea(area) {
         if (typeof data[0] != "undefined") {
             zoomMap(data[0].bbox);
             openRouteView();
+            var headerName = data[0].name.split(","); // We only want the main name displayed
+            $('#empty-title').text(headerName[0]);
         }
         else {
             searchTerm(area);

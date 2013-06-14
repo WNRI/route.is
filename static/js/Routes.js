@@ -81,7 +81,9 @@ function loadRoutes() {
                 if (routeviewcounter == sid) {
                     $('#routeloader').addClass('invisible');
                     var div = jQuery("<div>").append(data);
-                    $('#empty-title').html(div.find('.route-list-header').html());
+                    if(!showarea){ // searchArea() handles the title
+                        $('#empty-title').html(div.find('.route-list-header').html());
+                    }
                     $('#empty-title').removeClass('invisible');
                     $('#routecontent').html(div.find('.route-list-content'));
                     

@@ -83,7 +83,7 @@ def search_place(request, term):
     url = "%s?q=%s&accept-language=%s&format=json" % (settings.ROUTEMAP_NOMINATIM_URL,
                                            urllib2.quote(term.encode('utf8')),
                                            request.LANGUAGE_CODE)
-                                           
+                                        
     try:
         req = urllib2.Request(url, headers={
                 'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to %s)' % settings.ADMINS[0][1]
@@ -126,8 +126,7 @@ def search_area(request, term):
     url = "%s?q=%s&accept-language=%s&format=json" % (settings.ROUTEMAP_NOMINATIM_URL,
                                            urllib2.quote(term.encode('utf8')),
                                            request.LANGUAGE_CODE)
-                                           
-    print request.LANGUAGE_CODE                                 
+                                
     try:
         req = urllib2.Request(url, headers={
                 'User-Agent' : 'Python-urllib/2.7 Routemaps(report problems to %s)' % settings.ADMINS[0][1]
