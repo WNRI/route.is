@@ -16,14 +16,15 @@
     {% assets filters="yui_css", output="css/site.%(version)s.css", "css/normalize.css", "css/baselayout.css" %}
 	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
     {% endassets %}
-    
+    <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/desktop-ie.css" /><![endif]-->
+    <!--[if (gt IE 8)|(!IE)]-->
     {% assets filters="yui_css", output="css/small.%(version)s.css", "css/small.css"%}
 	<link rel="stylesheet" type="text/css" media="screen and (max-width:720px)" href="{{ ASSET_URL }}" />
     {% endassets %}
     {% assets filters="yui_css", output="css/desktop.%(version)s.css", "css/desktop.css"%}
 	<link rel="stylesheet" type="text/css" media="screen and (min-width:721px), print" href="{{ ASSET_URL }}" />
     {% endassets %}
-    
+    <!--![endif]-->
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/{{ pageinfo.cssfile }}" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/contrib/jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/contrib/jqm-icon-pack-4b216e9.css" />

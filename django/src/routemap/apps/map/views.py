@@ -75,7 +75,6 @@ def route_map_view(request, relid=None, name=None, inarea=None, template='basema
                'firstVisit' : firstVisit
     }
 
-
     try:
         uf = open(settings.ROUTEMAP_UPDATE_TIMESTAMP)
         context['updatetime'] = datetime.strptime(uf.readline().strip(),
@@ -84,12 +83,6 @@ def route_map_view(request, relid=None, name=None, inarea=None, template='basema
     except:
         pass
 
-    if cookie is not None:
-        if len(cookie) >= 7:
-            context['baseopacity'] = cookie[4]
-            context['routeopacity'] = cookie[5]
-            context['hillopacity'] = cookie[6]    
-            
     context['show_elevation_profile'] = settings.SHOW_ELEV_PROFILE
 
     context['ismobile'] = request.flavour == 'mobile'

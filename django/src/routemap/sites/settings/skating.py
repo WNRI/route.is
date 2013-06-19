@@ -33,13 +33,14 @@ ROUTEMAP_PAGEINFO = {
 }
 
 ROUTEMAP_ROUTE_TABLE = 'routemap.sites.models.SkatingRoutes'
+ROUTEMAP_SEGMENT_TABLE = 'routemap.sites.models.SkatingSegments'
 ROUTEMAP_SCHEMA = 'skating'
 ROUTEMAP_COMPILED_SYMBOL_PATH = 'skatingsyms'
 
 ROUTEMAP_TILE_URL = ROUTEMAP_TILE_BASEURL + '/skating'
 
 ROUTEMAP_HELPPAGES = {
-   'source' : PROJECTDIR + 'locale/%s/helppages.yaml',
+   'source' : PROJECTDIR + 'django/locale/%s/helppages.yaml',
    "structure" : (("about", "skating", "osm"),
                   ("rendering", "skatingroutes", "classification",
                    "labels", "hierarchy",
