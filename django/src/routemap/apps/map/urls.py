@@ -19,8 +19,11 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('routemap.apps.map.views',
     url(r'^$', 'route_map_view', name='simplemap'),
+    url(r'^(?P<relid>\d+)$', 'route_map_view', name='relationmap'),
     url(r'^relation/(?P<relid>\d+)$', 'route_map_view', name='relationmap'),
     url(r'^in/(?P<inarea>.+)$', 'route_map_view', name='areamap'),
-    url(r'^route/(?P<name>.+)$', 'route_map_view', name='routemap'),  
+    url(r'^route/(?P<name>.+)$', 'route_map_view', name='routemap'),
+    url(r'^(?P<name>.+)$', 'route_map_view', name='routemap'),  
+    
 )
 
