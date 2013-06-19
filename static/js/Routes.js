@@ -74,6 +74,7 @@ function sortTable(tablename){
 
 
 var routeviewcounter = 0;
+var firstView = false;
 function loadRoutes() {
     var bounds = map.getExtent();
     
@@ -101,9 +102,14 @@ function loadRoutes() {
                 if (routeviewcounter == sid) {
                     $('#routeloader').addClass('invisible');
                     var div = jQuery("<div>").append(data);
-                    if(showarea == -1){ // searchArea() handles the title
+                    
+                    // Should we show default title or shoud searchArea() handle the title?
+                    if(showarea == -1 || firstView){ 
                         $('#empty-title').html(div.find('.route-list-header').html());
+                        firstView = true; //Always stay true
                     }
+                    firstView = true;
+
                     $('#empty-title').removeClass('invisible');
                     $('#routecontent').html(div.find('.route-list-content'));
                     
