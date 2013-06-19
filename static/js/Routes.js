@@ -135,7 +135,7 @@ function loadRoutes() {
                                     else {
                                         var length = ""; // Not able to get min distance
                                     }
-                                    $('#' + routeid).html(length);
+                                    $('#' + routeid).html(length + " km");
                                 }
                                 else {
                                     var length = ""; // Not able to get min distance
