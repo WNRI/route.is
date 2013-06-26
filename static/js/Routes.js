@@ -123,7 +123,7 @@ function loadRoutes() {
                         var options = {enableHighAccuracy:true, maximumAge:0, timeout:7000};
                         navigator.geolocation.getCurrentPosition(function(position){
                             // Calc min distance from user to end/start point with this route id
-                            $.getJSON(routeinfo_baseurl + routeid + '/dist?' + 'lat=' + position.coords.latitude + '&lon=' + position.coords.longitude, function(data) {
+                            $.getJSON(Osgende.MapConfig.routeinfo_baseurl + routeid + '/dist?' + 'lat=' + position.coords.latitude + '&lon=' + position.coords.longitude, function(data) {
                                 if (data.minDistance !== null) {
                                     
                                     // Set distance in <td>
