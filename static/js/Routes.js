@@ -47,6 +47,9 @@ function setupRouteView(m) {
     m.addLayer(routeLayer);
     if (Osgende.MapConfig.showroute >= 0) {
         WMTSidebar.show('routes');
+        if(Osgende.MapConfig.ismobile) {
+            toggleSmallRouteView();
+        }
         showRouteInfo(Osgende.MapConfig.showroute, loadRoutes);
     } 
     
