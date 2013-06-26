@@ -461,6 +461,13 @@ li.f_menu_about{
     background-color: #dde
 }
 
+.routelist #routedist {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+}
+
 .routelist a:hover {
     text-decoration: none;
     background-color: #a4a4b4
