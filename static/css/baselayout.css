@@ -461,11 +461,13 @@ li.f_menu_about{
     background-color: #dde
 }
 
-.routelist #routedist {
+.routelist .routelistspacer {
     font-style: italic;
     font-size: 1.1em;
     margin-top: 0.3em;
     margin-bottom: 0.1em;
+    opacity:0;
+    width: 5px;
 }
 
 .routelist a:hover {

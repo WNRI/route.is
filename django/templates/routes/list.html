@@ -19,26 +19,18 @@ var teller = 0;
 {% for objlist in objs %}
 {% if objlist.routes %}
     <table class="routelist" id="{{ objlist.title }}" width=100%>
-    
-    <tr>   
-        <th></th>
-        <th colspan="2" align="{% if LANGUAGE_BIDI %}right{% else %}left{% endif %}">{{ objlist.title }} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_{{ objlist.shorttitle }}.png"></th>
-    </tr>
-
     <tr>
         {% if ismobile %}
-        <td id="routedist">{% trans "Avstand" %}</td>
+        <th>{% trans "Avstand" %}</th>
         {% endif %}
-    </tr>
-
-
-
+        <th class="routelistspacer"></th>
+        <th colspan="2" align="{% if LANGUAGE_BIDI %}right{% else %}left{% endif %}">{{ objlist.title }} <img width="50" height="10" src="{{ MEDIA_URL }}/img/route_{{ objlist.shorttitle }}.png"></th></tr>
     {% for route in objlist.routes|dictsort:"name" %}
     
     <tr onmouseover="highlightRoute('{{route.id}}');" onmouseout="unhighlightRoute('{{route.id}}');">
     
     {% if ismobile %}
-    <td width="50" class="routeDist" id="{{route.id}}"></td>
+    <td width="50" class="routeDist" id="{{route.id}}"></td><td></td>
     {% endif %}
     
     
