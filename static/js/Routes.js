@@ -144,6 +144,7 @@ function loadRoutes() {
                                 else {
                                     $('#' + routeid).html(length);   
                                 }
+                                $('#' + routeid).hide();
 
                                 // Check if this is the last row 
                                 if(numDone == $('.routeDist').length ) {
@@ -164,6 +165,7 @@ function loadRoutes() {
                                         else {
                                             $('#' + value.id).html(length + " m");
                                         } 
+                                        $('#' + value.id).show();
                                     });
                                 }
 
