@@ -119,6 +119,7 @@ function loadRoutes() {
                     
                     // Get all <td>'s from data and get route id
                     // .routeDist only exist on mobile
+                    var numDone = 0; // Keep track of calculated distances
                     $.each($('.routeDist'), function(index, value) {
                         
                         var routeid = value.id;     
@@ -127,31 +128,45 @@ function loadRoutes() {
                         navigator.geolocation.getCurrentPosition(function(position){
                             // Calc min distance from user to end/start point with this route id
                             $.getJSON(Osgende.MapConfig.routeinfo_baseurl + routeid + '/dist?' + 'lat=' + position.coords.latitude + '&lon=' + position.coords.longitude, function(data) {
+                                
+                                numDone++;
+
+                                var length = 0;
                                 if (data.minDistance !== null) {
                                     
                                     // Set distance in <td>
-                                    if(data.minDistance>999) {
-                                        var length = Math.round(data.minDistance/1000);
-                                    }
-                                    else if(data.minDistance<1000)  {
+                                    if(data.minDistance>0)  {
                                         var length = data.minDistance;
                                     }
-                                    else {
-                                        var length = ""; // Not able to get min distance
-                                    }
-                                    $('#' + routeid).html(length + " km");
+                                    $('#' + routeid).html(length);
+
                                 }
                                 else {
-                                    var length = ""; // Not able to get min distance
                                     $('#' + routeid).html(length);   
                                 }
 
-                                // Sort all tables as distances get ready
-                                // Not the most effective way of doing this, but 
-                                // we are only dealing with small tables
-                                $.each($('.routelist'), function(index, value) { 
-                                    sortTable(value.id);   
-                                });
+                                // Check if this is the last row 
+                                if(numDone == $('.routeDist').length ) {
+
+                                    // Sort all tables as distances get ready
+                                    // Not the most effective way of doing this, but 
+                                    // we are only dealing with small tables
+                                    $.each($('.routelist'), function(index, value) { 
+                                        sortTable(value.id);   
+                                    });
+
+                                    // Reformat distances after sorting them
+                                    $.each($('.routeDist'), function(index, value) { 
+                                        var length = $('#' + value.id).html();
+                                        if (length > 999) {
+                                            $('#' + value.id).html(Math.round(length/1000) + " km");
+                                        }
+                                        else {
+                                            $('#' + value.id).html(length + " m");
+                                        } 
+                                    });
+                                }
+
                                 
                             });
                         },
