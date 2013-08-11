@@ -267,6 +267,53 @@ Osgende.Geolocator = function() {
         this.map.addControl(this.geolocate);
     };
 
+    this.geoLocateUser = function(shouldZoom) {
+        this.geoLocateLayer.removeAllFeatures();
+        
+        this.geolocate.events.register("locationupdated",this,function(e) {
+            
+            var marker = new OpenLayers.Feature.Vector(
+                e.point,
+                {},
+                {
+                    externalGraphic: routemap_mediaurl + "/contrib/openlayers/img/marker-blue.png",
+                    graphicHeight: 25,
+                    graphicWidth: 21,
+                    graphicXOffset: -21/2,
+                    graphicYOffset: -25
+                }
+            );
+            this.geoLocateLayer.addFeatures([
+                marker
+            ]);
+            
+            this.geolocate.deactivate();
+            
+            if(shouldZoom) { 
+                this.map.zoomTo(9); // Only zoom on when opening page
+                Osgende.RouteMap.updateLocation(); // Call manually since this is done before event is set up
+            }
+            else if(map.getZoom()<9){ // Only zoom if user is in outer zoom levels
+                this.map.zoomTo(9);
+            } 
+        });
+        this.geolocate.events.register("locationfailed",this,function() {
+            noty({text: $('#geolocationErrorMsg').text(), timeout: 3000, type: 'error'});
+            
+            // Recreate due to bug in browser or openlayers
+            this.geolocate = new OpenLayers.Control.Geolocate({
+              geolocationOptions: {
+                  enableHighAccuracy: true,
+                  maximumAge: 0,
+                  timeout: 7000
+              }
+            });
+            map.addControl(geolocate);
+        });
+        this.geolocate.watch = false;
+        this.geolocate.activate(); 
+    }
+
 };
 
 
@@ -500,68 +547,6 @@ function toggleMapSwitch() {
     $(".mapSwitch").toggleClass('invisible');
 };
 
-
-
-function geoLocateUser(shouldZoom) {
-    geoLocateLayer.removeAllFeatures();
-    
-    geolocate.events.register("locationupdated",this,function(e) {
-        
-        var marker = new OpenLayers.Feature.Vector(
-            e.point,
-            {},
-            {
-                externalGraphic: routemap_mediaurl + "/contrib/openlayers/img/marker-blue.png",
-                graphicHeight: 25,
-                graphicWidth: 21,
-                graphicXOffset: -21/2,
-                graphicYOffset: -25
-            }
-        );
-        geoLocateLayer.addFeatures([
-            marker
-        ]);
-        
-    	geolocate.deactivate();
-        
-        if(shouldZoom) { 
-            map.zoomTo(9); // Only zoom on when opening page
-            updateLocation(); // Call manually since this is done before event is set up
-        }
-        else if(map.getZoom()<9){ // Only zoom if user is in outer zoom levels
-            map.zoomTo(9);
-        } 
-    });
-    geolocate.events.register("locationfailed",this,function() {
-        noty({text: $('#geolocationErrorMsg').text(), timeout: 3000, type: 'error'});
-        
-        // Recreate due to bug in browser or openlayers
-        geolocate = new OpenLayers.Control.Geolocate({
-          geolocationOptions: {
-              enableHighAccuracy: true,
-              maximumAge: 0,
-              timeout: 7000
-          }
-        });
-        map.addControl(geolocate);
-    });
-    geolocate.watch = false;
-    geolocate.activate();
-    
-    
-}
-
-$('.button-locate').click(function () {
-        geoLocateUser(false);
-});
-
-$('.button-pref').click(function () {
-        WMTSidebar.show('pref');
-});
-
-$('#select-lang').change(function() {
-        document.location.href = $('#select-lang option:selected')[0].value + '#pref';
-});
 
 function addZoombarClasses(ismobile){
     var zoomIn = document.getElementById('OpenLayers.Control.PanZoomBar_13_zoomin'),
