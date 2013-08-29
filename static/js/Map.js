@@ -267,53 +267,6 @@ Osgende.Geolocator = function() {
         this.map.addControl(this.geolocate);
     };
 
-    this.geoLocateUser = function(shouldZoom) {
-        this.geoLocateLayer.removeAllFeatures();
-        
-        this.geolocate.events.register("locationupdated",this,function(e) {
-            
-            var marker = new OpenLayers.Feature.Vector(
-                e.point,
-                {},
-                {
-                    externalGraphic: routemap_mediaurl + "/contrib/openlayers/img/marker-blue.png",
-                    graphicHeight: 25,
-                    graphicWidth: 21,
-                    graphicXOffset: -21/2,
-                    graphicYOffset: -25
-                }
-            );
-            this.geoLocateLayer.addFeatures([
-                marker
-            ]);
-            
-            this.geolocate.deactivate();
-            
-            if(shouldZoom) { 
-                this.map.zoomTo(9); // Only zoom on when opening page
-                Osgende.RouteMap.updateLocation(); // Call manually since this is done before event is set up
-            }
-            else if(map.getZoom()<9){ // Only zoom if user is in outer zoom levels
-                this.map.zoomTo(9);
-            } 
-        });
-        this.geolocate.events.register("locationfailed",this,function() {
-            noty({text: $('#geolocationErrorMsg').text(), timeout: 3000, type: 'error'});
-            
-            // Recreate due to bug in browser or openlayers
-            this.geolocate = new OpenLayers.Control.Geolocate({
-              geolocationOptions: {
-                  enableHighAccuracy: true,
-                  maximumAge: 0,
-                  timeout: 7000
-              }
-            });
-            map.addControl(geolocate);
-        });
-        this.geolocate.watch = false;
-        this.geolocate.activate(); 
-    }
-
 };
 
 
